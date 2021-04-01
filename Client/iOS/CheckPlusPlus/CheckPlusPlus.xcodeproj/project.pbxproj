@@ -11,9 +11,10 @@
 		7DA8DEC22615AAED00C9C277 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA8DEC12615AAED00C9C277 /* SceneDelegate.swift */; };
 		7DA8DEC92615AAF400C9C277 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DA8DEC82615AAF400C9C277 /* Assets.xcassets */; };
 		7DA8DECC2615AAF400C9C277 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DA8DECA2615AAF400C9C277 /* LaunchScreen.storyboard */; };
-		7DA8DED92615B50700C9C277 /* RootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA8DED82615B50700C9C277 /* RootCoordinator.swift */; };
 		7DA8DEDC2615B58100C9C277 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA8DEDB2615B58100C9C277 /* Coordinator.swift */; };
 		7DA8DEE02615C10100C9C277 /* MetaTypeDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA8DEDF2615C10100C9C277 /* MetaTypeDictionary.swift */; };
+		7DA8DEF42615C71B00C9C277 /* RootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA8DEF32615C71B00C9C277 /* RootCoordinator.swift */; };
+		7DA8DEF82615C72600C9C277 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA8DEF72615C72600C9C277 /* RootViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,9 +24,10 @@
 		7DA8DEC82615AAF400C9C277 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7DA8DECB2615AAF400C9C277 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7DA8DECD2615AAF400C9C277 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7DA8DED82615B50700C9C277 /* RootCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCoordinator.swift; sourceTree = "<group>"; };
 		7DA8DEDB2615B58100C9C277 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		7DA8DEDF2615C10100C9C277 /* MetaTypeDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaTypeDictionary.swift; sourceTree = "<group>"; };
+		7DA8DEF32615C71B00C9C277 /* RootCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCoordinator.swift; sourceTree = "<group>"; };
+		7DA8DEF72615C72600C9C277 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +60,7 @@
 		7DA8DEBE2615AAED00C9C277 /* CheckPlusPlus */ = {
 			isa = PBXGroup;
 			children = (
-				7DA8DEE42615C26B00C9C277 /* Root */,
+				7DA8DEF22615C71000C9C277 /* Root */,
 				7DA8DEDE2615C0E200C9C277 /* Utils */,
 				7DA8DEE52615C27300C9C277 /* App */,
 				7DA8DEE32615C26300C9C277 /* Core */,
@@ -85,14 +87,6 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
-		7DA8DEE42615C26B00C9C277 /* Root */ = {
-			isa = PBXGroup;
-			children = (
-				7DA8DED82615B50700C9C277 /* RootCoordinator.swift */,
-			);
-			path = Root;
-			sourceTree = "<group>";
-		};
 		7DA8DEE52615C27300C9C277 /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +94,15 @@
 				7DA8DEC12615AAED00C9C277 /* SceneDelegate.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		7DA8DEF22615C71000C9C277 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				7DA8DEF32615C71B00C9C277 /* RootCoordinator.swift */,
+				7DA8DEF72615C72600C9C277 /* RootViewModel.swift */,
+			);
+			path = Root;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,11 +174,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7DA8DED92615B50700C9C277 /* RootCoordinator.swift in Sources */,
 				7DA8DEE02615C10100C9C277 /* MetaTypeDictionary.swift in Sources */,
 				7DA8DEDC2615B58100C9C277 /* Coordinator.swift in Sources */,
 				7DA8DEC02615AAED00C9C277 /* AppDelegate.swift in Sources */,
 				7DA8DEC22615AAED00C9C277 /* SceneDelegate.swift in Sources */,
+				7DA8DEF82615C72600C9C277 /* RootViewModel.swift in Sources */,
+				7DA8DEF42615C71B00C9C277 /* RootCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
