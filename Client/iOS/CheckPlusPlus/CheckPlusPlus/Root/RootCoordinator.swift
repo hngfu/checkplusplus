@@ -10,8 +10,7 @@ import UIKit
 final class RootCoordinator: Coordinator {
 
     func start() {
-        self.viewModel = RootViewModel()
-        self.viewModel?.delegate = self
+        self.viewModel = RootViewModel(delegate: self)
     }
     
     //MARK: - Private
@@ -19,5 +18,10 @@ final class RootCoordinator: Coordinator {
 }
 
 extension RootCoordinator: RootViewModelDelegate {
-    
+    func showAuthentication() {
+        let coordinator = AuthenticationCoordinator(navigationController: navigationController)
+        childCoordinators[AuthenticationCoordinator] = coordinator
+        coordinator.delegate = self
+        coordinator.start()
+    }
 }

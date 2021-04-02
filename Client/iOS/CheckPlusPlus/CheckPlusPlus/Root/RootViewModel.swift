@@ -8,14 +8,15 @@
 import Foundation
 
 protocol RootViewModelDelegate: AnyObject {
-    
+    func showAuthentication()
 }
 
 final class RootViewModel {
 
     weak var delegate: RootViewModelDelegate?
     
-    init() {
-        
+    init(delegate: RootViewModelDelegate?) {
+        self.delegate = delegate
+        delegate?.showAuthentication()
     }
 }

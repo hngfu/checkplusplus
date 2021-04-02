@@ -21,6 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.makeKeyAndVisible()
         
         rootCoordinator = RootCoordinator(navigationController: navigationController)
+        rootCoordinator?.start()
     }
     
     //MARK: - Private
