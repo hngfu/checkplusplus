@@ -16,7 +16,8 @@ final class AuthenticationCoordinator: Coordinator {
     weak var delegate: AuthenticationCoordinatorDelegate?
     
     func start() {
-        let vc = UIViewController(nibName: "AuthenticationViewController", bundle: nil)
+        let sb = UIStoryboard(name: "AuthenticationViewController", bundle: nil)
+        guard let vc = sb.instantiateInitialViewController() else { return }
         vc.modalPresentationStyle = .fullScreen
         navigationController.present(vc, animated: false, completion: nil)
     }

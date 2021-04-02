@@ -11,10 +11,17 @@ final class RootCoordinator: Coordinator {
 
     func start() {
         self.viewModel = RootViewModel(delegate: self)
+        showToDoList()
     }
     
     //MARK: - Private
     private var viewModel: RootViewModel?
+    
+    private func showToDoList() {
+        let coordinator = ToDoListCoordinator(navigationController: navigationController)
+        childCoordinators[ToDoListCoordinator] = coordinator
+        coordinator.start()
+    }
 }
 
 extension RootCoordinator: RootViewModelDelegate {
