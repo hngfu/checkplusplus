@@ -6,8 +6,15 @@ target 'CheckPlusPlus' do
   use_frameworks!
 
   # Pods for CheckPlusPlus
+  
+  ## Auth
   pod 'FirebaseUI/Auth'
   pod 'FirebaseUI/Google'
   pod 'FirebaseUI/OAuth'
+  
+  ## Animation
   pod 'lottie-ios'
+  
+  ## Keychain
+  pod 'KeychainSwift', '~> 19.0'
 end

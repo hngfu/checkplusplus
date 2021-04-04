@@ -76,5 +76,6 @@ DerivedData/
 
 ## Private
 GoogleService-Info.plist
+KeychainManager.swift
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,xcode,cocoapods
