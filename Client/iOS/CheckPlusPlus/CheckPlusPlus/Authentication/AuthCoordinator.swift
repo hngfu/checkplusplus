@@ -9,7 +9,7 @@ import UIKit
 import FirebaseUI
 import os.log
 
-final class AuthenticationCoordinator: Coordinator {
+final class AuthCoordinator: Coordinator {
 
     func start() {
         guard let authUI = FUIAuth.defaultAuthUI() else { return }

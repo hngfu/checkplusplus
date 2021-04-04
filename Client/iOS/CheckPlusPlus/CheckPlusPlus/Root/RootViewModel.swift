@@ -8,7 +8,7 @@
 import Foundation
 
 protocol RootViewModelDelegate: AnyObject {
-    func showAuthentication()
+    func showAuth()
 }
 
 final class RootViewModel {
@@ -17,6 +17,6 @@ final class RootViewModel {
     
     init(delegate: RootViewModelDelegate?) {
         self.delegate = delegate
-        delegate?.showAuthentication()
+        delegate?.showAuth()
     }
 }

@@ -20,7 +20,7 @@
 		7DA8DEE02615C10100C9C277 /* MetaTypeDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA8DEDF2615C10100C9C277 /* MetaTypeDictionary.swift */; };
 		7DA8DEF42615C71B00C9C277 /* RootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA8DEF32615C71B00C9C277 /* RootCoordinator.swift */; };
 		7DA8DEF82615C72600C9C277 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA8DEF72615C72600C9C277 /* RootViewModel.swift */; };
-		7DA8DEFF2616CFEB00C9C277 /* AuthenticationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA8DEFE2616CFEB00C9C277 /* AuthenticationCoordinator.swift */; };
+		7DA8DEFF2616CFEB00C9C277 /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA8DEFE2616CFEB00C9C277 /* AuthCoordinator.swift */; };
 		7DA8DF282617086100C9C277 /* ToDoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA8DF272617086100C9C277 /* ToDoListViewModel.swift */; };
 		7DA8DF2C2617086E00C9C277 /* ToDoListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA8DF2B2617086E00C9C277 /* ToDoListCoordinator.swift */; };
 		7DA8DF302617087A00C9C277 /* ToDoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA8DF2E2617087A00C9C277 /* ToDoListViewController.swift */; };
@@ -45,7 +45,7 @@
 		7DA8DEDF2615C10100C9C277 /* MetaTypeDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaTypeDictionary.swift; sourceTree = "<group>"; };
 		7DA8DEF32615C71B00C9C277 /* RootCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCoordinator.swift; sourceTree = "<group>"; };
 		7DA8DEF72615C72600C9C277 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
-		7DA8DEFE2616CFEB00C9C277 /* AuthenticationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationCoordinator.swift; sourceTree = "<group>"; };
+		7DA8DEFE2616CFEB00C9C277 /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
 		7DA8DF272617086100C9C277 /* ToDoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListViewModel.swift; sourceTree = "<group>"; };
 		7DA8DF2B2617086E00C9C277 /* ToDoListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListCoordinator.swift; sourceTree = "<group>"; };
 		7DA8DF2E2617087A00C9C277 /* ToDoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListViewController.swift; sourceTree = "<group>"; };
@@ -147,7 +147,7 @@
 		7DA8DEFD2616CFDB00C9C277 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
-				7DA8DEFE2616CFEB00C9C277 /* AuthenticationCoordinator.swift */,
+				7DA8DEFE2616CFEB00C9C277 /* AuthCoordinator.swift */,
 				7D69133F2619B77E0060AAAD /* AuthPickerViewController.swift */,
 				7D6913402619B77E0060AAAD /* AuthPickerViewController.xib */,
 			);
@@ -318,7 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7DA8DEE02615C10100C9C277 /* MetaTypeDictionary.swift in Sources */,
-				7DA8DEFF2616CFEB00C9C277 /* AuthenticationCoordinator.swift in Sources */,
+				7DA8DEFF2616CFEB00C9C277 /* AuthCoordinator.swift in Sources */,
 				7DA8DEDC2615B58100C9C277 /* Coordinator.swift in Sources */,
 				7DA8DF282617086100C9C277 /* ToDoListViewModel.swift in Sources */,
 				7D6913412619B77E0060AAAD /* AuthPickerViewController.swift in Sources */,
