@@ -5,14 +5,22 @@
 //  Created by 조재흥 on 2021/04/02.
 //
 
-import UIKit
 import FirebaseUI
 import os.log
 
+protocol AuthCoordinatorDelegate: AnyObject {
+    func didSignInWith(uid: String)
+}
+
 final class AuthCoordinator: Coordinator {
+    
+    weak var delegate: AuthCoordinatorDelegate?
 
     func start() {
         guard let authUI = FUIAuth.defaultAuthUI() else { return }
+        authController.didSignInHandler = { [weak self] (uid: String) in
+            self?.delegate?.didSignInWith(uid: uid)
+        }
         authUI.delegate = self.authController
         authUI.providers = [
             FUIGoogleAuth(authUI: authUI),
@@ -28,12 +36,16 @@ final class AuthCoordinator: Coordinator {
     
     private final class AuthController: NSObject, FUIAuthDelegate {
         
+        var didSignInHandler: ((String) -> Void)?
+        
         func authUI(_ authUI: FUIAuth, didSignInWith authDataResult: AuthDataResult?, error: Error?) {
             if let error = error {
                 os_log("Auth error: %{private}@", error.localizedDescription)
                 return
             }
             
+            guard let uid = authDataResult?.user.uid else { return }
+            didSignInHandler?(uid)
         }
         
         func authPickerViewController(forAuthUI authUI: FUIAuth) -> FUIAuthPickerViewController {
