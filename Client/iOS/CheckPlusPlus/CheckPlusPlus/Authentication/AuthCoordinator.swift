@@ -9,7 +9,7 @@ import FirebaseUI
 import os.log
 
 protocol AuthCoordinatorDelegate: AnyObject {
-    func didSignInWith(uid: String)
+    func showToDoList(with uid: String)
 }
 
 final class AuthCoordinator: Coordinator {
@@ -19,7 +19,7 @@ final class AuthCoordinator: Coordinator {
     func start() {
         guard let authUI = FUIAuth.defaultAuthUI() else { return }
         authController.didSignInHandler = { [weak self] (uid: String) in
-            self?.delegate?.didSignInWith(uid: uid)
+            self?.delegate?.showToDoList(with: uid)
         }
         authUI.delegate = self.authController
         authUI.providers = [
@@ -34,10 +34,12 @@ final class AuthCoordinator: Coordinator {
     //MARK: - Private
     private let authController = AuthController()
     
+    //MARK: - class AuthController
     private final class AuthController: NSObject, FUIAuthDelegate {
         
         var didSignInHandler: ((String) -> Void)?
         
+        //MARK: - FUIAuthDelegate
         func authUI(_ authUI: FUIAuth, didSignInWith authDataResult: AuthDataResult?, error: Error?) {
             if let error = error {
                 os_log("Auth error: %{private}@", error.localizedDescription)
@@ -48,6 +50,7 @@ final class AuthCoordinator: Coordinator {
             didSignInHandler?(uid)
         }
         
+        //MARK: - Custom FirebaseUI ViewController
         func authPickerViewController(forAuthUI authUI: FUIAuth) -> FUIAuthPickerViewController {
             return AuthPickerViewController(nibName: "AuthPickerViewController",
                                             bundle: Bundle.main,

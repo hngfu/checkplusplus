@@ -12,6 +12,7 @@
 		7D6913412619B77E0060AAAD /* AuthPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D69133F2619B77E0060AAAD /* AuthPickerViewController.swift */; };
 		7D6913422619B77E0060AAAD /* AuthPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D6913402619B77E0060AAAD /* AuthPickerViewController.xib */; };
 		7D69135F2619E1BF0060AAAD /* meerkat-looking-around.json in Resources */ = {isa = PBXBuildFile; fileRef = 7D69135E2619E1BF0060AAAD /* meerkat-looking-around.json */; };
+		7D6913632619F0CC0060AAAD /* RootCoordinator+Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6913622619F0CC0060AAAD /* RootCoordinator+Auth.swift */; };
 		7DA8DEC02615AAED00C9C277 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA8DEBF2615AAED00C9C277 /* AppDelegate.swift */; };
 		7DA8DEC22615AAED00C9C277 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA8DEC12615AAED00C9C277 /* SceneDelegate.swift */; };
 		7DA8DEC92615AAF400C9C277 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DA8DEC82615AAF400C9C277 /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 		7D69133F2619B77E0060AAAD /* AuthPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPickerViewController.swift; sourceTree = "<group>"; };
 		7D6913402619B77E0060AAAD /* AuthPickerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthPickerViewController.xib; sourceTree = "<group>"; };
 		7D69135E2619E1BF0060AAAD /* meerkat-looking-around.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "meerkat-looking-around.json"; sourceTree = "<group>"; };
+		7D6913622619F0CC0060AAAD /* RootCoordinator+Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RootCoordinator+Auth.swift"; sourceTree = "<group>"; };
 		7DA8DEBC2615AAED00C9C277 /* CheckPlusPlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheckPlusPlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DA8DEBF2615AAED00C9C277 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7DA8DEC12615AAED00C9C277 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				7DA8DEF32615C71B00C9C277 /* RootCoordinator.swift */,
+				7D6913622619F0CC0060AAAD /* RootCoordinator+Auth.swift */,
 				7DA8DEF72615C72600C9C277 /* RootViewModel.swift */,
 			);
 			path = Root;
@@ -323,6 +326,7 @@
 				7DA8DF282617086100C9C277 /* ToDoListViewModel.swift in Sources */,
 				7D6913412619B77E0060AAAD /* AuthPickerViewController.swift in Sources */,
 				7DA8DF2C2617086E00C9C277 /* ToDoListCoordinator.swift in Sources */,
+				7D6913632619F0CC0060AAAD /* RootCoordinator+Auth.swift in Sources */,
 				7DA8DEC02615AAED00C9C277 /* AppDelegate.swift in Sources */,
 				7DA8DEC22615AAED00C9C277 /* SceneDelegate.swift in Sources */,
 				7DA8DEF82615C72600C9C277 /* RootViewModel.swift in Sources */,
