@@ -9,6 +9,7 @@ import Foundation
 
 protocol RootViewModelDelegate: AnyObject {
     func showAuth()
+    func showToDoList(with uid: String)
 }
 
 final class RootViewModel {
@@ -17,6 +18,14 @@ final class RootViewModel {
     
     init(delegate: RootViewModelDelegate?) {
         self.delegate = delegate
-        delegate?.showAuth()
+        
+        if let uid = keychainManager.getUID() {
+            delegate?.showToDoList(with: uid)
+        } else {
+            delegate?.showAuth()
+        }
     }
+    
+    //MARK: - Private
+    private let keychainManager = KeychainManager.shared
 }

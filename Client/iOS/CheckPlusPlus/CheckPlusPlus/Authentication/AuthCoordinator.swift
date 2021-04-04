@@ -47,6 +47,7 @@ final class AuthCoordinator: Coordinator {
             }
             
             guard let uid = authDataResult?.user.uid else { return }
+            keychainManager.set(uid: uid)
             didSignInHandler?(uid)
         }
         
@@ -56,6 +57,9 @@ final class AuthCoordinator: Coordinator {
                                             bundle: Bundle.main,
                                             authUI: authUI)
         }
+        
+        //MARK: - Private
+        private let keychainManager = KeychainManager.shared
     }
 }
 
