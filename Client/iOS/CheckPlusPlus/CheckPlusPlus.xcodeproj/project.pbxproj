@@ -28,6 +28,7 @@
 		1DF14A051EEE51F1403B10E9 /* Pods-CheckPlusPlus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheckPlusPlus.debug.xcconfig"; path = "Target Support Files/Pods-CheckPlusPlus/Pods-CheckPlusPlus.debug.xcconfig"; sourceTree = "<group>"; };
 		21A78FC2CD060516887CE173 /* Pods-CheckPlusPlus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheckPlusPlus.release.xcconfig"; path = "Target Support Files/Pods-CheckPlusPlus/Pods-CheckPlusPlus.release.xcconfig"; sourceTree = "<group>"; };
 		7D691318261975B40060AAAD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7D69131F2619A9E10060AAAD /* CheckPlusPlus.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CheckPlusPlus.entitlements; sourceTree = "<group>"; };
 		7DA8DEBC2615AAED00C9C277 /* CheckPlusPlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheckPlusPlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DA8DEBF2615AAED00C9C277 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7DA8DEC12615AAED00C9C277 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +80,7 @@
 		7DA8DEBE2615AAED00C9C277 /* CheckPlusPlus */ = {
 			isa = PBXGroup;
 			children = (
+				7D69131F2619A9E10060AAAD /* CheckPlusPlus.entitlements */,
 				7DA8DF262617084700C9C277 /* ToDoList */,
 				7DA8DEFD2616CFDB00C9C277 /* Authentication */,
 				7DA8DEF22615C71000C9C277 /* Root */,
@@ -445,7 +447,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = CheckPlusPlus/CheckPlusPlus.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = JZW6GB7MS9;
 				INFOPLIST_FILE = CheckPlusPlus/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -455,6 +459,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.hngfu.CheckPlusPlus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Check plus plus for Developement";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -466,7 +471,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = CheckPlusPlus/CheckPlusPlus.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = JZW6GB7MS9;
 				INFOPLIST_FILE = CheckPlusPlus/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -476,6 +483,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.hngfu.CheckPlusPlus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Check plus plus for Developement";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
