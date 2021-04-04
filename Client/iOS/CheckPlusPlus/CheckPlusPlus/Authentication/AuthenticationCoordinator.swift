@@ -35,6 +35,12 @@ final class AuthenticationCoordinator: Coordinator {
             }
             
         }
+        
+        func authPickerViewController(forAuthUI authUI: FUIAuth) -> FUIAuthPickerViewController {
+            return AuthPickerViewController(nibName: "AuthPickerViewController",
+                                            bundle: Bundle.main,
+                                            authUI: authUI)
+        }
     }
 }
 
