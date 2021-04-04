@@ -9,9 +9,10 @@ import UIKit
 
 final class ToDoListCoordinator: Coordinator {
     
-    func start() {
+    func start(with uid: String) {
         let sb = UIStoryboard(name: "ToDoListViewController", bundle: nil)
-        guard let vc = sb.instantiateInitialViewController() else { return }
+        guard let vc = sb.instantiateInitialViewController() as? ToDoListViewController else { return }
+        vc.uid = uid
         navigationController.pushViewController(vc, animated: false)
     }
     

@@ -10,9 +10,8 @@ import Foundation
 extension RootCoordinator: AuthCoordinatorDelegate {
     
     func showToDoList(with uid: String) {
-        
         let coordinator = ToDoListCoordinator(navigationController: navigationController)
         childCoordinators[ToDoListCoordinator] = coordinator
-        coordinator.start()
+        coordinator.start(with: uid)
     }
 }
