@@ -11,6 +11,7 @@
 		7D691319261975B40060AAAD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7D691318261975B40060AAAD /* GoogleService-Info.plist */; };
 		7D6913412619B77E0060AAAD /* AuthPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D69133F2619B77E0060AAAD /* AuthPickerViewController.swift */; };
 		7D6913422619B77E0060AAAD /* AuthPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D6913402619B77E0060AAAD /* AuthPickerViewController.xib */; };
+		7D69135F2619E1BF0060AAAD /* meerkat-looking-around.json in Resources */ = {isa = PBXBuildFile; fileRef = 7D69135E2619E1BF0060AAAD /* meerkat-looking-around.json */; };
 		7DA8DEC02615AAED00C9C277 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA8DEBF2615AAED00C9C277 /* AppDelegate.swift */; };
 		7DA8DEC22615AAED00C9C277 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA8DEC12615AAED00C9C277 /* SceneDelegate.swift */; };
 		7DA8DEC92615AAF400C9C277 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DA8DEC82615AAF400C9C277 /* Assets.xcassets */; };
@@ -33,6 +34,7 @@
 		7D69131F2619A9E10060AAAD /* CheckPlusPlus.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CheckPlusPlus.entitlements; sourceTree = "<group>"; };
 		7D69133F2619B77E0060AAAD /* AuthPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPickerViewController.swift; sourceTree = "<group>"; };
 		7D6913402619B77E0060AAAD /* AuthPickerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthPickerViewController.xib; sourceTree = "<group>"; };
+		7D69135E2619E1BF0060AAAD /* meerkat-looking-around.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "meerkat-looking-around.json"; sourceTree = "<group>"; };
 		7DA8DEBC2615AAED00C9C277 /* CheckPlusPlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheckPlusPlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DA8DEBF2615AAED00C9C277 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7DA8DEC12615AAED00C9C277 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7D69135D2619E1B50060AAAD /* LottieAssets */ = {
+			isa = PBXGroup;
+			children = (
+				7D69135E2619E1BF0060AAAD /* meerkat-looking-around.json */,
+			);
+			path = LottieAssets;
+			sourceTree = "<group>";
+		};
 		7DA8DEB32615AAED00C9C277 = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +102,7 @@
 				7DA8DEE52615C27300C9C277 /* App */,
 				7DA8DEE32615C26300C9C277 /* Core */,
 				7DA8DEC82615AAF400C9C277 /* Assets.xcassets */,
+				7D69135D2619E1B50060AAAD /* LottieAssets */,
 				7DA8DECA2615AAF400C9C277 /* LaunchScreen.storyboard */,
 				7D691318261975B40060AAAD /* GoogleService-Info.plist */,
 				7DA8DECD2615AAF400C9C277 /* Info.plist */,
@@ -235,6 +246,7 @@
 				7D691319261975B40060AAAD /* GoogleService-Info.plist in Resources */,
 				7D6913422619B77E0060AAAD /* AuthPickerViewController.xib in Resources */,
 				7DA8DEC92615AAF400C9C277 /* Assets.xcassets in Resources */,
+				7D69135F2619E1BF0060AAAD /* meerkat-looking-around.json in Resources */,
 				7DA8DF362617099300C9C277 /* ToDoListViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

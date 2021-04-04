@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AuthPickerViewController" customModule="CheckPlusPlus" customModuleProvider="target">
             <connections>
+                <outlet property="backgroundAnimationView" destination="oLM-A8-UsL" id="fDo-9m-ui1"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,11 +19,29 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oLM-A8-UsL" customClass="AnimationView" customModule="Lottie">
+                    <rect key="frame" x="20" y="88" width="374" height="730"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="meerkat-looking-around"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="oLM-A8-UsL" secondAttribute="trailing" constant="20" id="9y6-EK-YOD"/>
+                <constraint firstItem="oLM-A8-UsL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="VHJ-8G-J9a"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="oLM-A8-UsL" secondAttribute="bottom" constant="44" id="iaN-Bp-OVg"/>
+                <constraint firstItem="oLM-A8-UsL" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="44" id="qhS-Wa-Okt"/>
+            </constraints>
             <point key="canvasLocation" x="116" y="129"/>
         </view>
     </objects>
+    <designables>
+        <designable name="oLM-A8-UsL"/>
+    </designables>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

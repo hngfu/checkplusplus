@@ -9,4 +9,5 @@ target 'CheckPlusPlus' do
   pod 'FirebaseUI/Auth'
   pod 'FirebaseUI/Google'
   pod 'FirebaseUI/OAuth'
+  pod 'lottie-ios'
 end
