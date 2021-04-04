@@ -28,7 +28,6 @@ extension RootCoordinator: RootViewModelDelegate {
     func showAuthentication() {
         let coordinator = AuthenticationCoordinator(navigationController: navigationController)
         childCoordinators[AuthenticationCoordinator] = coordinator
-        coordinator.delegate = self
         coordinator.start()
     }
 }

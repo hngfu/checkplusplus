@@ -6,22 +6,35 @@
 //
 
 import UIKit
-
-protocol AuthenticationCoordinatorDelegate: AnyObject {
-    
-}
+import FirebaseUI
+import os.log
 
 final class AuthenticationCoordinator: Coordinator {
-    
-    weak var delegate: AuthenticationCoordinatorDelegate?
-    
+
     func start() {
-        let sb = UIStoryboard(name: "AuthenticationViewController", bundle: nil)
-        guard let vc = sb.instantiateInitialViewController() else { return }
-        vc.modalPresentationStyle = .fullScreen
-        navigationController.present(vc, animated: false, completion: nil)
+        guard let authUI = FUIAuth.defaultAuthUI() else { return }
+        authUI.delegate = self.authController
+        authUI.providers = [
+            FUIGoogleAuth(authUI: authUI),
+            FUIOAuth.appleAuthProvider(with: .dark),
+        ]
+        let authViewController = authUI.authViewController()
+        authViewController.modalPresentationStyle = .fullScreen
+        navigationController.present(authViewController, animated: false)
     }
     
     //MARK: - Private
-    private var viewModel: AuthenticationViewModel?
+    private let authController = AuthController()
+    
+    private final class AuthController: NSObject, FUIAuthDelegate {
+        
+        func authUI(_ authUI: FUIAuth, didSignInWith authDataResult: AuthDataResult?, error: Error?) {
+            if let error = error {
+                os_log("Auth error: %{private}@", error.localizedDescription)
+                return
+            }
+            
+        }
+    }
 }
+
