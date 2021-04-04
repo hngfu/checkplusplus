@@ -6,5 +6,7 @@ target 'CheckPlusPlus' do
   use_frameworks!
 
   # Pods for CheckPlusPlus
-
+  pod 'FirebaseUI/Auth'
+  pod 'FirebaseUI/Google'
+  pod 'FirebaseUI/OAuth'
 end
