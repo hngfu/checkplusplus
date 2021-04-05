@@ -18,13 +18,13 @@ final class KeychainManager {
     func set(uid: String) {
         let uid = Private.Keychain.encrypt(uid)
         if keychain.set(uid, forKey: key) == false {
-            os_log("%@: 'setUID' is failed", #file)
+            os_log("%@: '%@' is failed", #file, #function)
         }
     }
     
     func deleteUID() {
         if keychain.delete(key) == false {
-            os_log("%@: 'deleteUID' is failed", #file)
+            os_log("%@: '%@' is failed", #file, #function)
         }
     }
     

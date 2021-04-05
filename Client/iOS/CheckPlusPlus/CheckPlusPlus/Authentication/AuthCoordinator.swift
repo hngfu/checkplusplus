@@ -9,7 +9,7 @@ import FirebaseUI
 import os.log
 
 protocol AuthCoordinatorDelegate: AnyObject {
-    func showToDoList(with uid: String)
+    func didSignIn(uid: String)
 }
 
 final class AuthCoordinator: Coordinator {
@@ -19,7 +19,7 @@ final class AuthCoordinator: Coordinator {
     func start() {
         guard let authUI = FUIAuth.defaultAuthUI() else { return }
         authController.didSignInHandler = { [weak self] (uid: String) in
-            self?.delegate?.showToDoList(with: uid)
+            self?.delegate?.didSignIn(uid: uid)
         }
         authUI.delegate = self.authController
         authUI.providers = [
@@ -47,7 +47,6 @@ final class AuthCoordinator: Coordinator {
             }
             
             guard let uid = authDataResult?.user.uid else { return }
-            keychainManager.set(uid: uid)
             didSignInHandler?(uid)
         }
         
@@ -57,9 +56,6 @@ final class AuthCoordinator: Coordinator {
                                             bundle: Bundle.main,
                                             authUI: authUI)
         }
-        
-        //MARK: - Private
-        private let keychainManager = KeychainManager()
     }
 }
 
