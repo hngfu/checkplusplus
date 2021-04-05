@@ -27,5 +27,5 @@ final class RootViewModel {
     }
     
     //MARK: - Private
-    private let keychainManager = KeychainManager.shared
+    private let keychainManager = KeychainManager()
 }

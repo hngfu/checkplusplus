@@ -59,7 +59,7 @@ final class AuthCoordinator: Coordinator {
         }
         
         //MARK: - Private
-        private let keychainManager = KeychainManager.shared
+        private let keychainManager = KeychainManager()
     }
 }
 

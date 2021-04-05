@@ -8,10 +8,8 @@
 import KeychainSwift
 import os.log
 
-class KeychainManager {
-    
-    static let shared = KeychainManager()
-    
+final class KeychainManager {
+
     func getUID() -> String? {
         guard let uid = keychain.get(key) else { return nil }
         return Private.Keychain.decrypt(uid)
@@ -33,6 +31,4 @@ class KeychainManager {
     //MARK: - Private
     private let keychain = KeychainSwift()
     private let key = Private.Keychain.key
-    
-    private init() {}
 }
