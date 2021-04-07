@@ -468,3 +468,4 @@ DerivedData/
 ## Private
 GoogleService-Info.plist
 Private.swift
+Private.cs
