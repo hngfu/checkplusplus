@@ -9,6 +9,7 @@ namespace Server
     abstract class Session
     {
         Socket _socket;
+        RecvBuffer _recvBuffer = new RecvBuffer(65535);
 
         public abstract void OnConnected();
         public abstract void OnRecv(byte[] data);
@@ -18,6 +19,84 @@ namespace Server
         public Session(Socket socket)
         {
             _socket = socket;
+
+            RegisterRecv();
+        }
+
+        public void Send(byte[] data)
+        {
+            if (_socket.Connected == false)
+                return;
+
+            try
+            {
+                SocketAsyncEventArgs sendArgs = new SocketAsyncEventArgs();
+                sendArgs.Completed += OnSendCompleted;
+                sendArgs.SetBuffer(data, 0, data.Length);
+                bool isPending = _socket.SendAsync(sendArgs);
+                if (isPending == false)
+                    OnSendCompleted(null, sendArgs);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"Send failed: {e}");
+            }
+        }
+
+        void OnSendCompleted(object sender, SocketAsyncEventArgs e)
+        {
+            if (e.SocketError == SocketError.Success && e.BytesTransferred > 0)
+            {
+                OnSend();
+            }
+            else
+                Disconnect();
+        }
+
+        void RegisterRecv()
+        {
+            if (_socket.Connected == false)
+                return;
+
+            _recvBuffer.Clean();
+
+            try
+            {
+                SocketAsyncEventArgs recvArgs = new SocketAsyncEventArgs();
+                recvArgs.Completed += OnRecvCompleted;
+                recvArgs.SetBuffer(_recvBuffer.WriteSegment);
+                bool isPending = _socket.ReceiveAsync(recvArgs);
+                if (isPending == false)
+                    OnRecvCompleted(null, recvArgs);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"registerRecv failed: {e}");
+            }
+        }
+
+        void OnRecvCompleted(object sender, SocketAsyncEventArgs e)
+        {
+            if (e.SocketError == SocketError.Success && e.BytesTransferred > 0)
+            {
+                if (_recvBuffer.OnWrite(e.BytesTransferred) == false)
+                {
+                    Disconnect();
+                    return;
+                }
+
+                OnRecv(_recvBuffer.ReadSegment.Array);
+
+                if (_recvBuffer.OnRead(e.BytesTransferred) == false)
+                {
+                    Disconnect();
+                    return;
+                }
+
+                RegisterRecv();
+            }
+            else
+                Disconnect();
         }
 
         public void Disconnect()
@@ -33,37 +112,8 @@ namespace Server
             }
             catch (Exception e)
             {
-                Console.WriteLine($"Disconnect Failed: {e}");
+                Console.WriteLine($"Disconnect failed: {e}");
             }
-        }
-
-        public void Send(byte[] data)
-        {
-            if (_socket.Connected == false)
-                return;
-
-            try
-            {
-                SocketAsyncEventArgs sendArgs = new SocketAsyncEventArgs();
-                sendArgs.SetBuffer(data, 0, data.Length);
-                bool isPending = _socket.SendAsync(sendArgs);
-                if (isPending == false)
-                    OnSendCompleted(null, sendArgs);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine($"Send Failed: {e}");
-            }
-        }
-
-        void OnSendCompleted(object sender, SocketAsyncEventArgs e)
-        {
-            if (e.SocketError == SocketError.Success && e.BytesTransferred > 0)
-            {
-                OnSend();
-            }
-            else
-                Disconnect();
         }
     }
 }
