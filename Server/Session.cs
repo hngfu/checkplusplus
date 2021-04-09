@@ -11,10 +11,7 @@ namespace Server
         Socket _socket;
         RecvBuffer _recvBuffer = new RecvBuffer(65535);
 
-        public abstract void OnConnected();
         public abstract void OnRecv(byte[] data);
-        public abstract void OnSend();
-        public abstract void OnDisconnected();
 
         public Session(Socket socket)
         {
@@ -31,26 +28,13 @@ namespace Server
             try
             {
                 SocketAsyncEventArgs sendArgs = new SocketAsyncEventArgs();
-                sendArgs.Completed += OnSendCompleted;
                 sendArgs.SetBuffer(data, 0, data.Length);
-                bool isPending = _socket.SendAsync(sendArgs);
-                if (isPending == false)
-                    OnSendCompleted(null, sendArgs);
+                _socket.SendAsync(sendArgs);
             }
             catch (Exception e)
             {
                 Console.WriteLine($"Send failed: {e}");
             }
-        }
-
-        void OnSendCompleted(object sender, SocketAsyncEventArgs e)
-        {
-            if (e.SocketError == SocketError.Success && e.BytesTransferred > 0)
-            {
-                OnSend();
-            }
-            else
-                Disconnect();
         }
 
         void RegisterRecv()
@@ -71,7 +55,7 @@ namespace Server
             }
             catch (Exception e)
             {
-                Console.WriteLine($"registerRecv failed: {e}");
+                Console.WriteLine($"RegisterRecv failed: {e}");
             }
         }
 
@@ -79,19 +63,7 @@ namespace Server
         {
             if (e.SocketError == SocketError.Success && e.BytesTransferred > 0)
             {
-                if (_recvBuffer.OnWrite(e.BytesTransferred) == false)
-                {
-                    Disconnect();
-                    return;
-                }
-
                 OnRecv(_recvBuffer.ReadSegment.Array);
-
-                if (_recvBuffer.OnRead(e.BytesTransferred) == false)
-                {
-                    Disconnect();
-                    return;
-                }
 
                 RegisterRecv();
             }
@@ -108,7 +80,6 @@ namespace Server
             {
                 _socket.Shutdown(SocketShutdown.Both);
                 _socket.Close();
-                OnDisconnected();
             }
             catch (Exception e)
             {

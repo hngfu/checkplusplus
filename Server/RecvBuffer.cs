@@ -40,14 +40,14 @@ namespace Server
             }
         }
 
-        public void OnRead(int bytesNumber)
+        public void OnRead(int byteSize)
         {
-            _readPos += bytesNumber;
+            _readPos += byteSize;
         }
 
-        public void OnWrite(int bytesNumber)
+        public void OnWrite(int byteSize)
         {
-            _writePos += bytesNumber;
+            _writePos += byteSize;
         }
     }
 }
