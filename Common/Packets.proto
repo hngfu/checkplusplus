@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+enum MessageID {
+  GET_TODO_LIST = 0;
+  ADD_TODO = 1;
+  EDIT_TODO = 2;
+  DELETE_TODO = 3;
+}
+
+message GetToDoList {
+  string uid = 1;
+}
+
+message AddToDo {
+  string content = 1;
+}
+
+message EditToDo {
+  int32 id = 1;
+  string content = 2;
+}
+
+message DeleteToDo {
+  int32 id = 1;
+}
