@@ -13,7 +13,7 @@ namespace Server
 
         public abstract void OnRecv(byte[] data);
 
-        public Session(Socket socket)
+        public void Start(Socket socket)
         {
             _socket = socket;
 
