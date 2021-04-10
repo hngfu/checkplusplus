@@ -9,10 +9,12 @@ namespace Server
     class Listener
     {
         Socket _socket;
+        Func<ClientSession> _sessionFactory;
 
-        public Listener(IPEndPoint endPoint)
+        public Listener(IPEndPoint endPoint, Func<ClientSession> sessionFactory)
         {
             _socket = new Socket(endPoint.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
+            _sessionFactory = sessionFactory;
 
             _socket.Bind(endPoint);
             _socket.Listen(100);
@@ -36,7 +38,8 @@ namespace Server
         {
             if (e.SocketError == SocketError.Success)
             {
-
+                Session session = _sessionFactory.Invoke();
+                session.Start(e.AcceptSocket);
             }
             else
                 Console.WriteLine($"OnAcceptCompleted Error: {e}");

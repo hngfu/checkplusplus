@@ -6,6 +6,8 @@ namespace Server
 {
     class Program
     {
+        static Listener _listener;
+
         static void Main(string[] args)
         {
             string hostName = Dns.GetHostName();
@@ -13,10 +15,13 @@ namespace Server
             IPAddress ipAddress = hostEntry.AddressList[0];
             IPEndPoint endPoint = new IPEndPoint(ipAddress, Private.PORT);
 
-            Socket socket = new Socket(ipAddress.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
-            socket.Bind(endPoint);
-            socket.Listen(10);
-            Socket clientSocket = socket.Accept();
+            _listener = new Listener(endPoint, () => SessionManager.Instance.Generate());
+
+            Console.WriteLine("Running...");
+            while (true)
+            {
+
+            }
         }
     }
 }
