@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Google.Protobuf;
+using Server.Message;
 
 namespace Server.Packet
 {
@@ -26,6 +27,10 @@ namespace Server.Packet
 
         private void RegisterHandlers()
         {
+            _handlers.Add((ushort)MessageID.GetToDoList, MessageHandler.GetToDoListHandler);
+            _handlers.Add((ushort)MessageID.AddToDo, MessageHandler.AddToDoHandler);
+            _handlers.Add((ushort)MessageID.EditToDo, MessageHandler.EditToDoHandler);
+            _handlers.Add((ushort)MessageID.DeleteToDo, MessageHandler.DeleteToDoHandler);
         }
 
         public void OnRecvPacket(ClientSession session, byte[] packet)
