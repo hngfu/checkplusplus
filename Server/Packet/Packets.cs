@@ -25,8 +25,9 @@ public static partial class PacketsReflection {
           "Cg1QYWNrZXRzLnByb3RvIhoKC0dldFRvRG9MaXN0EgsKA3VpZBgBIAEoCSIa",
           "CgdBZGRUb0RvEg8KB2NvbnRlbnQYASABKAkiJwoIRWRpdFRvRG8SCgoCaWQY",
           "ASABKAUSDwoHY29udGVudBgCIAEoCSIYCgpEZWxldGVUb0RvEgoKAmlkGAEg",
-          "ASgFKkwKCU1lc3NhZ2VJRBIRCg1HRVRfVE9ET19MSVNUEAASDAoIQUREX1RP",
-          "RE8QARINCglFRElUX1RPRE8QAhIPCgtERUxFVEVfVE9ETxADYgZwcm90bzM="));
+          "ASgFKlAKCU1lc3NhZ2VJRBISCg5HRVRfVE9fRE9fTElTVBAAEg0KCUFERF9U",
+          "T19ETxABEg4KCkVESVRfVE9fRE8QAhIQCgxERUxFVEVfVE9fRE8QA2IGcHJv",
+          "dG8z"));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { },
         new pbr::GeneratedClrTypeInfo(new[] {typeof(global::MessageID), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -41,10 +42,10 @@ public static partial class PacketsReflection {
 }
 #region Enums
 public enum MessageID {
-  [pbr::OriginalName("GET_TODO_LIST")] GetTodoList = 0,
-  [pbr::OriginalName("ADD_TODO")] AddTodo = 1,
-  [pbr::OriginalName("EDIT_TODO")] EditTodo = 2,
-  [pbr::OriginalName("DELETE_TODO")] DeleteTodo = 3,
+  [pbr::OriginalName("GET_TO_DO_LIST")] GetToDoList = 0,
+  [pbr::OriginalName("ADD_TO_DO")] AddToDo = 1,
+  [pbr::OriginalName("EDIT_TO_DO")] EditToDo = 2,
+  [pbr::OriginalName("DELETE_TO_DO")] DeleteToDo = 3,
 }
 
 #endregion

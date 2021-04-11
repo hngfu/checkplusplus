@@ -1,10 +1,10 @@
 syntax = "proto3";
 
 enum MessageID {
-  GET_TODO_LIST = 0;
-  ADD_TODO = 1;
-  EDIT_TODO = 2;
-  DELETE_TODO = 3;
+  GET_TO_DO_LIST = 0;
+  ADD_TO_DO = 1;
+  EDIT_TO_DO = 2;
+  DELETE_TO_DO = 3;
 }
 
 message GetToDoList {
