@@ -19,18 +19,18 @@ namespace Server.Packet
 
         private void RegisterFactories()
         {
-            _factories.Add((ushort)MessageID.GetToDoList, MakeMessage<GetToDoList>);
-            _factories.Add((ushort)MessageID.AddToDo, MakeMessage<AddToDo>);
-            _factories.Add((ushort)MessageID.EditToDo, MakeMessage<EditToDo>);
-            _factories.Add((ushort)MessageID.DeleteToDo, MakeMessage<DeleteToDo>);
+            _factories.Add((ushort)MessageID.CGetToDoList, MakeMessage<C_GetToDos>);
+            _factories.Add((ushort)MessageID.CAddToDo, MakeMessage<C_AddToDo>);
+            _factories.Add((ushort)MessageID.CEditToDo, MakeMessage<C_EditToDo>);
+            _factories.Add((ushort)MessageID.CDeleteToDo, MakeMessage<C_DeleteToDo>);
         }
 
         private void RegisterHandlers()
         {
-            _handlers.Add((ushort)MessageID.GetToDoList, MessageHandler.GetToDoListHandler);
-            _handlers.Add((ushort)MessageID.AddToDo, MessageHandler.AddToDoHandler);
-            _handlers.Add((ushort)MessageID.EditToDo, MessageHandler.EditToDoHandler);
-            _handlers.Add((ushort)MessageID.DeleteToDo, MessageHandler.DeleteToDoHandler);
+            _handlers.Add((ushort)MessageID.CGetToDoList, MessageHandler.C_GetToDoListHandler);
+            _handlers.Add((ushort)MessageID.CAddToDo, MessageHandler.C_AddToDoHandler);
+            _handlers.Add((ushort)MessageID.CEditToDo, MessageHandler.C_EditToDoHandler);
+            _handlers.Add((ushort)MessageID.CDeleteToDo, MessageHandler.C_DeleteToDoHandler);
         }
 
         public void OnRecvPacket(ClientSession session, byte[] packet)

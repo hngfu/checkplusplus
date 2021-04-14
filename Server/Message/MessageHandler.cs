@@ -7,25 +7,25 @@ namespace Server.Message
 {
     class MessageHandler
     {
-        public static void GetToDoListHandler(ClientSession session, IMessage message)
+        public static void C_GetToDoListHandler(ClientSession session, IMessage message)
         {
-            GetToDoList getToDoList = message as GetToDoList;
+            C_GetToDos getToDoList = message as C_GetToDos;
             
         }
 
-        public static void AddToDoHandler(ClientSession session, IMessage message)
+        public static void C_AddToDoHandler(ClientSession session, IMessage message)
         {
-            AddToDo addToDo = message as AddToDo;
+            C_AddToDo addToDo = message as C_AddToDo;
         }
 
-        public static void EditToDoHandler(ClientSession session, IMessage message)
+        public static void C_EditToDoHandler(ClientSession session, IMessage message)
         {
-            EditToDo editToDo = message as EditToDo;
+            C_EditToDo editToDo = message as C_EditToDo;
         }
 
-        public static void DeleteToDoHandler(ClientSession session, IMessage message)
+        public static void C_DeleteToDoHandler(ClientSession session, IMessage message)
         {
-            DeleteToDo deleteToDo = message as DeleteToDo;
+            C_DeleteToDo deleteToDo = message as C_DeleteToDo;
         }
     }
 }

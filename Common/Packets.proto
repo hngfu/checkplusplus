@@ -1,25 +1,52 @@
 syntax = "proto3";
 
 enum MessageID {
-  GET_TO_DO_LIST = 0;
-  ADD_TO_DO = 1;
-  EDIT_TO_DO = 2;
-  DELETE_TO_DO = 3;
+  C_GET_TO_DO_LIST = 0;
+  C_ADD_TO_DO = 1;
+  C_EDIT_TO_DO = 2;
+  C_DELETE_TO_DO = 3;
+  S_TO_DOS = 4;
+  S_ADDED_TO_DO = 5;
+  S_EDITED_TO_DO = 6;
+  S_DELETED_TO_DO = 7;
 }
 
-message GetToDoList {
-  string uid = 1;
-}
-
-message AddToDo {
-  string content = 1;
-}
-
-message EditToDo {
+message ToDo {
   int32 id = 1;
   string content = 2;
 }
 
-message DeleteToDo {
+message C_GetToDos {
+  string uid = 1;
+}
+
+message C_AddToDo {
+  string content = 1;
+}
+
+message C_EditToDo {
+  int32 id = 1;
+  string content = 2;
+}
+
+message C_DeleteToDo {
+  int32 id = 1;
+}
+
+message S_ToDos {
+  repeated ToDo todo = 1;
+}
+
+message S_AddedToDo {
+  int32 id = 1;
+  string content = 2;
+}
+
+message S_EditedToDo {
+  int32 id = 1;
+  string content = 2;
+}
+
+message S_DeletedToDo {
   int32 id = 1;
 }
