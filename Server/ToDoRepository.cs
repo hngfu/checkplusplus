@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Text;
 
 namespace Server
@@ -23,7 +24,7 @@ namespace Server
                 COMMIT;
             ";
             int affectedRowsNumber = 3;
-            if (Execute(command) == affectedRowsNumber)
+            if (ExecuteCommand(command) == affectedRowsNumber)
                 return true;
             return false;
         }
@@ -35,7 +36,7 @@ namespace Server
             VALUES ({toDoListID}, '{content}');           
             ";
             int affectedRowsNumber = 1;
-            if (Execute(command) == affectedRowsNumber)
+            if (ExecuteCommand(command) == affectedRowsNumber)
                 return true;
             return false;
         }
@@ -48,7 +49,7 @@ namespace Server
             WHERE id = {id};         
             ";
             int affectedRowsNumber = 1;
-            if (Execute(command) == affectedRowsNumber)
+            if (ExecuteCommand(command) == affectedRowsNumber)
                 return true;
             return false;
         }
@@ -61,13 +62,14 @@ namespace Server
             WHERE id = {id};  
             ";
             int affectedRowsNumber = 1;
-            if (Execute(command) == affectedRowsNumber)
+            if (ExecuteCommand(command) == affectedRowsNumber)
                 return true;
             return false;
         }
 
-        public void GetToDos(int userID)
+        public List<ToDo> GetToDos(int userID)
         {
+            List<ToDo> todos = new List<ToDo>();
             string query = $@"
             SELECT id, content
             FROM ToDos
@@ -76,17 +78,33 @@ namespace Server
             WHERE Users_id = {userID} 
             LIMIT 1); 
             ";
-            MySqlCommand cmd = new MySqlCommand();
-            cmd.Connection = _connection;
-            cmd.CommandText = query;
-            MySqlDataReader reader = cmd.ExecuteReader();
-            while (reader.Read())
+            DataSet dataSet = ExecuteQuery(query);
+            foreach (DataRow row in dataSet.Tables[0].Rows)
             {
-                Console.WriteLine($"{reader["id"]} {reader["content"]}");
+                todos.Add(new ToDo
+                {
+                    Id = (int)row["id"],
+                    Content = (string)row["content"],
+                });
             }
+            return todos;
         }
 
-        int Execute(string command)
+        public bool Exists(string uid)
+        {
+            string query = $@"
+            SELECT EXISTS (
+	            SELECT * 
+                FROM Users 
+                WHERE ukey = '{uid}' 
+            ) as isExists;
+            ";
+            DataSet dataSet = ExecuteQuery(query);
+            Int64 exists = 1;
+            return (Int64)dataSet.Tables[0].Rows[0]["isExists"] == exists;
+        }
+
+        int ExecuteCommand(string command)
         {
             MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = _connection;
@@ -94,10 +112,20 @@ namespace Server
             return cmd.ExecuteNonQuery();
         }
 
+        DataSet ExecuteQuery(string query)
+        {
+            DataSet dataSet = new DataSet();
+            using (MySqlConnection connection = new MySqlConnection(Private.CONNECTION_STRING))
+            {
+                MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection);
+                adapter.Fill(dataSet);
+            }
+            return dataSet;
+        }
+
         ToDoRepository()
         {
-            string connectionString = Private.CONNECTION_STRING;
-            _connection = new MySqlConnection(connectionString);
+            _connection = new MySqlConnection(Private.CONNECTION_STRING);
             _connection.Open();
         }
 

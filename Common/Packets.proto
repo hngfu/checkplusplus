@@ -34,7 +34,7 @@ message C_DeleteToDo {
 }
 
 message S_ToDos {
-  repeated ToDo todo = 1;
+  repeated ToDo todos = 1;
 }
 
 message S_AddedToDo {
