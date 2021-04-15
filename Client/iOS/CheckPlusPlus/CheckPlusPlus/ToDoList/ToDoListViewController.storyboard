@@ -16,8 +16,32 @@
                     <view key="view" contentMode="scaleToFill" id="9VZ-B8-tUh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AGT-Cb-I3N">
+                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <items>
+                                    <barButtonItem title="Item" image="gearshape.fill" catalog="system" id="rZc-af-cmQ"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="MtO-sb-o1Q"/>
+                                    <barButtonItem title="Item" image="square.and.pencil" catalog="system" id="22p-jr-pT5"/>
+                                </items>
+                            </toolbar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="byh-nR-ymi">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <sections/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Iwd-1F-wum"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Iwd-1F-wum" firstAttribute="bottom" secondItem="AGT-Cb-I3N" secondAttribute="bottom" id="Mbh-DU-36G"/>
+                            <constraint firstItem="AGT-Cb-I3N" firstAttribute="top" secondItem="byh-nR-ymi" secondAttribute="bottom" id="hBZ-Ri-Qfy"/>
+                            <constraint firstItem="byh-nR-ymi" firstAttribute="top" secondItem="Iwd-1F-wum" secondAttribute="top" id="i0f-I6-9Df"/>
+                            <constraint firstItem="Iwd-1F-wum" firstAttribute="trailing" secondItem="byh-nR-ymi" secondAttribute="trailing" id="kdd-rw-5ir"/>
+                            <constraint firstItem="AGT-Cb-I3N" firstAttribute="leading" secondItem="Iwd-1F-wum" secondAttribute="leading" id="p4S-6J-ZmC"/>
+                            <constraint firstItem="AGT-Cb-I3N" firstAttribute="trailing" secondItem="Iwd-1F-wum" secondAttribute="trailing" id="sVY-gb-gUG"/>
+                            <constraint firstItem="byh-nR-ymi" firstAttribute="leading" secondItem="Iwd-1F-wum" secondAttribute="leading" id="xpD-KS-rk2"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qqe-ID-EyA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -26,6 +50,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="gearshape.fill" catalog="system" width="128" height="121"/>
+        <image name="square.and.pencil" catalog="system" width="128" height="115"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
