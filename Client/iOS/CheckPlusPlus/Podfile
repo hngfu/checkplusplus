@@ -6,6 +6,8 @@ target 'CheckPlusPlus' do
   use_frameworks!
 
   # Pods for CheckPlusPlus
+  ## Protobuf
+  pod 'SwiftProtobuf', '~> 1.0'
   
   ## Auth
   pod 'FirebaseUI/Auth'

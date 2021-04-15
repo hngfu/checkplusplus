@@ -72,6 +72,7 @@ PODS:
   - nanopb/decode (2.30907.0)
   - nanopb/encode (2.30907.0)
   - PromisesObjC (1.2.12)
+  - SwiftProtobuf (1.16.0)
 
 DEPENDENCIES:
   - FirebaseUI/Auth
@@ -79,6 +80,7 @@ DEPENDENCIES:
   - FirebaseUI/OAuth
   - KeychainSwift (~> 19.0)
   - lottie-ios
+  - SwiftProtobuf (~> 1.0)
 
 SPEC REPOS:
   trunk:
@@ -97,6 +99,7 @@ SPEC REPOS:
     - lottie-ios
     - nanopb
     - PromisesObjC
+    - SwiftProtobuf
 
 SPEC CHECKSUMS:
   AppAuth: 31bcec809a638d7bd2f86ea8a52bd45f6e81e7c7
@@ -114,7 +117,8 @@ SPEC CHECKSUMS:
   lottie-ios: 106e92eaf11fbed0a76590b4cdb9b5ec26123ff7
   nanopb: 59221d7f958fb711001e6a449489542d92ae113e
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
+  SwiftProtobuf: 4e16842b83c6fda06b10fac50d73b3f1fce8ab7b
 
-PODFILE CHECKSUM: 1d7b42cf63984cb0cb2fcc1d529302d9d874cfff
+PODFILE CHECKSUM: faedfd456168ccddf65006349862a2ca09659035
 
 COCOAPODS: 1.10.1

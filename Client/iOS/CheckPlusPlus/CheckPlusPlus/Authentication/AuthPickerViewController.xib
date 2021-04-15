@@ -39,9 +39,6 @@
             <point key="canvasLocation" x="116" y="129"/>
         </view>
     </objects>
-    <designables>
-        <designable name="oLM-A8-UsL"/>
-    </designables>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
