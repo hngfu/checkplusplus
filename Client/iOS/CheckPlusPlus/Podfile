@@ -6,6 +6,9 @@ target 'CheckPlusPlus' do
   use_frameworks!
 
   # Pods for CheckPlusPlus
+  ## Network
+  pod 'CocoaAsyncSocket'
+  
   ## Protobuf
   pod 'SwiftProtobuf', '~> 1.0'
   

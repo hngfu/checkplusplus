@@ -4,6 +4,7 @@ PODS:
     - AppAuth/ExternalUserAgent (= 1.4.0)
   - AppAuth/Core (1.4.0)
   - AppAuth/ExternalUserAgent (1.4.0)
+  - CocoaAsyncSocket (7.6.5)
   - Firebase/Auth (7.9.0):
     - Firebase/CoreOnly
     - FirebaseAuth (~> 7.9.0)
@@ -75,6 +76,7 @@ PODS:
   - SwiftProtobuf (1.16.0)
 
 DEPENDENCIES:
+  - CocoaAsyncSocket
   - FirebaseUI/Auth
   - FirebaseUI/Google
   - FirebaseUI/OAuth
@@ -85,6 +87,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - AppAuth
+    - CocoaAsyncSocket
     - Firebase
     - FirebaseAuth
     - FirebaseCore
@@ -103,6 +106,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AppAuth: 31bcec809a638d7bd2f86ea8a52bd45f6e81e7c7
+  CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
   Firebase: d8bd6bd34b4c7ed57bfdd056c66ff5adcdde53ab
   FirebaseAuth: 20625f04fdd213995249a82375b3dab39b1c136c
   FirebaseCore: 0798738ad1ae0fda67e17c7b9081241c431c6859
@@ -119,6 +123,6 @@ SPEC CHECKSUMS:
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   SwiftProtobuf: 4e16842b83c6fda06b10fac50d73b3f1fce8ab7b
 
-PODFILE CHECKSUM: faedfd456168ccddf65006349862a2ca09659035
+PODFILE CHECKSUM: 52ddabf117c5b7cd4e0bcbf1a01ef1b05c7b2aeb
 
 COCOAPODS: 1.10.1
