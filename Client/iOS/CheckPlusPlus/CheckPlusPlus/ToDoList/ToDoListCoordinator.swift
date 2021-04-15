@@ -14,6 +14,7 @@ final class ToDoListCoordinator: Coordinator {
         
         let sb = UIStoryboard(name: "\(ToDoListViewController.self)", bundle: nil)
         guard let vc = sb.instantiateInitialViewController() as? ToDoListViewController else { return }
+        vc.viewModel = viewModel
         navigationController.pushViewController(vc, animated: false)
     }
     

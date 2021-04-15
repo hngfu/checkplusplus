@@ -20,15 +20,29 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AGT-Cb-I3N">
                                 <rect key="frame" x="0.0" y="813" width="414" height="49"/>
                                 <items>
-                                    <barButtonItem title="Item" image="gearshape.fill" catalog="system" id="rZc-af-cmQ"/>
+                                    <barButtonItem title="Item" image="gearshape.fill" catalog="system" id="rZc-af-cmQ">
+                                        <color key="tintColor" systemColor="systemIndigoColor"/>
+                                        <connections>
+                                            <action selector="tapSettingButton:" destination="DCz-31-pGM" id="jsP-Sw-8DH"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="MtO-sb-o1Q"/>
-                                    <barButtonItem title="Item" image="square.and.pencil" catalog="system" id="22p-jr-pT5"/>
+                                    <barButtonItem title="Item" image="square.and.pencil" catalog="system" id="22p-jr-pT5">
+                                        <color key="tintColor" systemColor="systemIndigoColor"/>
+                                        <connections>
+                                            <action selector="tapAddToDoButton:" destination="DCz-31-pGM" id="wOQ-ey-xT9"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="byh-nR-ymi">
                                 <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="DCz-31-pGM" id="KEv-QV-WWY"/>
+                                    <outlet property="delegate" destination="DCz-31-pGM" id="d0D-lr-kfL"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Iwd-1F-wum"/>
@@ -43,6 +57,9 @@
                             <constraint firstItem="byh-nR-ymi" firstAttribute="leading" secondItem="Iwd-1F-wum" secondAttribute="leading" id="xpD-KS-rk2"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="toDoListTableView" destination="byh-nR-ymi" id="qk6-7c-xQH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qqe-ID-EyA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -54,6 +71,9 @@
         <image name="square.and.pencil" catalog="system" width="128" height="115"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
