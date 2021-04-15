@@ -1,0 +1,3 @@
+#!/bin/sh
+
+protoc --swift_out=../Client/iOS/CheckPlusPlus/CheckPlusPlus/Models Packets.proto
