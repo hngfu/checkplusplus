@@ -33,8 +33,8 @@ final class ToDoListViewModel {
         getToDosMessage.uid = uid
         let id = UInt16(MessageID.cGetToDoList.rawValue)
         if let data = try? getToDosMessage.serializedData() {
-            let dataToSend = packetManager.makePacketWith(id: id, data: data)
-            session.send(data: dataToSend)
+            let packet = packetManager.makePacketWith(id: id, data: data)
+            session.send(data: packet)
         }
     }
     
@@ -47,6 +47,6 @@ final class ToDoListViewModel {
 extension ToDoListViewModel: ServerSessionDelegate {
     
     func didRead(data: Data) {
-        
+        let (messageID, message) = packetManager.parse(packet: data)
     }
 }
