@@ -28,11 +28,20 @@ final class ToDoListViewModel {
     
     func start(with uid: String) {
         keychainManager.set(uid: uid)
+        
+        var getToDosMessage = C_GetToDos()
+        getToDosMessage.uid = uid
+        let id = UInt16(MessageID.cGetToDoList.rawValue)
+        if let data = try? getToDosMessage.serializedData() {
+            let dataToSend = packetManager.makePacketWith(id: id, data: data)
+            session.send(data: dataToSend)
+        }
     }
     
     //MARK: - Private
     private let keychainManager = KeychainManager()
     private let session = ServerSession()
+    private let packetManager = PacketManager()
 }
 
 extension ToDoListViewModel: ServerSessionDelegate {

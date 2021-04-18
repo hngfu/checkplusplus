@@ -31,6 +31,7 @@
 		7DBB50182628601C00647F89 /* ToDoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBB50162628601C00647F89 /* ToDoTableViewCell.swift */; };
 		7DBB50192628601C00647F89 /* ToDoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DBB50172628601C00647F89 /* ToDoTableViewCell.xib */; };
 		7DBB5032262871C400647F89 /* ServerSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBB5031262871C400647F89 /* ServerSession.swift */; };
+		7DBB509F262C7DC400647F89 /* PacketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBB509E262C7DC400647F89 /* PacketManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		7DBB50162628601C00647F89 /* ToDoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTableViewCell.swift; sourceTree = "<group>"; };
 		7DBB50172628601C00647F89 /* ToDoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ToDoTableViewCell.xib; sourceTree = "<group>"; };
 		7DBB5031262871C400647F89 /* ServerSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerSession.swift; sourceTree = "<group>"; };
+		7DBB509E262C7DC400647F89 /* PacketManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacketManager.swift; sourceTree = "<group>"; };
 		7FE3C9EE7F77237C04C1BD61 /* Pods_CheckPlusPlus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CheckPlusPlus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -130,6 +132,7 @@
 				7D6913792619F8D30060AAAD /* KeychainManager.swift */,
 				7D69137C2619FFB60060AAAD /* Private.swift */,
 				7DBB5031262871C400647F89 /* ServerSession.swift */,
+				7DBB509E262C7DC400647F89 /* PacketManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 				7DA8DEDC2615B58100C9C277 /* Coordinator.swift in Sources */,
 				7DA8DF282617086100C9C277 /* ToDoListViewModel.swift in Sources */,
 				7D6913412619B77E0060AAAD /* AuthPickerViewController.swift in Sources */,
+				7DBB509F262C7DC400647F89 /* PacketManager.swift in Sources */,
 				7DA8DF2C2617086E00C9C277 /* ToDoListCoordinator.swift in Sources */,
 				7DA8DEC02615AAED00C9C277 /* AppDelegate.swift in Sources */,
 				7DBB501426280A8800647F89 /* Packets.pb.swift in Sources */,
