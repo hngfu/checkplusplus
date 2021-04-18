@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxSwift
 import RxCocoa
 
 final class ToDoListViewController: UIViewController {
@@ -14,16 +15,30 @@ final class ToDoListViewController: UIViewController {
     @IBOutlet weak var settingButton: UIBarButtonItem!
     @IBOutlet weak var editToDoButton: UIBarButtonItem!
     
+    var viewModel: ToDoListViewModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.setNavigationBarHidden(true, animated: false)
-    }
-    
-    func bind(to viewModel: ToDoListViewModel) {
-        self.viewModel = viewModel
         
+        toDoListTableView.register(UINib(nibName: "\(ToDoTableViewCell.self)", bundle: nil),
+                                   forCellReuseIdentifier: ToDoTableViewCell.identifier)
+        bind()
     }
     
     //MARK: - Private
-    private var viewModel: ToDoListViewModel?
+    private var disposeBag = DisposeBag()
+    
+    private func bind() {
+        guard let viewModel = self.viewModel else { return }
+        
+        //TableView
+        viewModel.todos.bind(to: toDoListTableView.rx.items(cellIdentifier: ToDoTableViewCell.identifier,
+                                                            cellType: ToDoTableViewCell.self)) {_, element, cell in
+            cell.toDoContentLabel.text = element.content
+        }
+        .disposed(by: disposeBag)
+        
+        
+    }
 }

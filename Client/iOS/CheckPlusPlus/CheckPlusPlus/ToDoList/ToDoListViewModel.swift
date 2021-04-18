@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RxRelay
 
 protocol ToDoListViewModelDelegate: AnyObject {
     func showAuth()
@@ -14,7 +15,7 @@ protocol ToDoListViewModelDelegate: AnyObject {
 final class ToDoListViewModel {
     
     weak var delegate: ToDoListViewModelDelegate?
-    private var session = ServerSession()
+    var todos = BehaviorRelay<[ToDo]>(value: [])
     
     init(delegate: ToDoListViewModelDelegate) {
         self.delegate = delegate
@@ -25,12 +26,13 @@ final class ToDoListViewModel {
         }
     }
     
-    func saveUID(uid: String) {
+    func start(with uid: String) {
         keychainManager.set(uid: uid)
     }
     
     //MARK: - Private
     private let keychainManager = KeychainManager()
+    private let session = ServerSession()
 }
 
 extension ToDoListViewModel: ServerSessionDelegate {
