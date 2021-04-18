@@ -14,9 +14,11 @@ protocol ToDoListViewModelDelegate: AnyObject {
 final class ToDoListViewModel {
     
     weak var delegate: ToDoListViewModelDelegate?
+    private var session = ServerSession()
     
     init(delegate: ToDoListViewModelDelegate) {
         self.delegate = delegate
+        session.delegate = self
         
         if keychainManager.getUID() == nil {
             delegate.showAuth()
@@ -29,4 +31,11 @@ final class ToDoListViewModel {
     
     //MARK: - Private
     private let keychainManager = KeychainManager()
+}
+
+extension ToDoListViewModel: ServerSessionDelegate {
+    
+    func didRead(data: Data) {
+        
+    }
 }

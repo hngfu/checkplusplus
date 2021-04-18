@@ -39,10 +39,6 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <sections/>
-                                <connections>
-                                    <outlet property="dataSource" destination="DCz-31-pGM" id="KEv-QV-WWY"/>
-                                    <outlet property="delegate" destination="DCz-31-pGM" id="d0D-lr-kfL"/>
-                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Iwd-1F-wum"/>
