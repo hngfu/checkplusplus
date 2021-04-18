@@ -6,6 +6,10 @@ target 'CheckPlusPlus' do
   use_frameworks!
 
   # Pods for CheckPlusPlus
+  ## ReactiveX
+  pod 'RxSwift', '6.1.0'
+  pod 'RxCocoa', '6.1.0'
+  
   ## Network
   pod 'CocoaAsyncSocket'
   

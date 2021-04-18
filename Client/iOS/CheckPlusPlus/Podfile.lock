@@ -73,6 +73,12 @@ PODS:
   - nanopb/decode (2.30907.0)
   - nanopb/encode (2.30907.0)
   - PromisesObjC (1.2.12)
+  - RxCocoa (6.1.0):
+    - RxRelay (= 6.1.0)
+    - RxSwift (= 6.1.0)
+  - RxRelay (6.1.0):
+    - RxSwift (= 6.1.0)
+  - RxSwift (6.1.0)
   - SwiftProtobuf (1.16.0)
 
 DEPENDENCIES:
@@ -82,6 +88,8 @@ DEPENDENCIES:
   - FirebaseUI/OAuth
   - KeychainSwift (~> 19.0)
   - lottie-ios
+  - RxCocoa (= 6.1.0)
+  - RxSwift (= 6.1.0)
   - SwiftProtobuf (~> 1.0)
 
 SPEC REPOS:
@@ -102,6 +110,9 @@ SPEC REPOS:
     - lottie-ios
     - nanopb
     - PromisesObjC
+    - RxCocoa
+    - RxRelay
+    - RxSwift
     - SwiftProtobuf
 
 SPEC CHECKSUMS:
@@ -121,8 +132,11 @@ SPEC CHECKSUMS:
   lottie-ios: 106e92eaf11fbed0a76590b4cdb9b5ec26123ff7
   nanopb: 59221d7f958fb711001e6a449489542d92ae113e
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
+  RxCocoa: 5c51f02d562cbd94629f6c26cf0c80fe4ab8d343
+  RxRelay: 483e1a19fad961b41f0b0c0bee506f46c1ae14fe
+  RxSwift: a834e5c538e89eca0cae86f403f4fbf0336786ce
   SwiftProtobuf: 4e16842b83c6fda06b10fac50d73b3f1fce8ab7b
 
-PODFILE CHECKSUM: 52ddabf117c5b7cd4e0bcbf1a01ef1b05c7b2aeb
+PODFILE CHECKSUM: dbb2d4b44fc8d7694bf8f67bf6321bd4d4008168
 
 COCOAPODS: 1.10.1

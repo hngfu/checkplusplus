@@ -6,21 +6,24 @@
 //
 
 import UIKit
+import RxCocoa
 
 final class ToDoListViewController: UIViewController {
     
     @IBOutlet weak var toDoListTableView: UITableView!
-    
-    var viewModel: ToDoListViewModel?
+    @IBOutlet weak var settingButton: UIBarButtonItem!
+    @IBOutlet weak var editToDoButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
-
-    @IBAction func tapSettingButton(_ sender: UIBarButtonItem) {
+    
+    func bind(to viewModel: ToDoListViewModel) {
+        self.viewModel = viewModel
+        
     }
     
-    @IBAction func tapAddToDoButton(_ sender: UIBarButtonItem) {
-    }
+    //MARK: - Private
+    private var viewModel: ToDoListViewModel?
 }

@@ -22,16 +22,10 @@
                                 <items>
                                     <barButtonItem title="Item" image="gearshape.fill" catalog="system" id="rZc-af-cmQ">
                                         <color key="tintColor" systemColor="systemIndigoColor"/>
-                                        <connections>
-                                            <action selector="tapSettingButton:" destination="DCz-31-pGM" id="jsP-Sw-8DH"/>
-                                        </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="MtO-sb-o1Q"/>
                                     <barButtonItem title="Item" image="square.and.pencil" catalog="system" id="22p-jr-pT5">
                                         <color key="tintColor" systemColor="systemIndigoColor"/>
-                                        <connections>
-                                            <action selector="tapAddToDoButton:" destination="DCz-31-pGM" id="wOQ-ey-xT9"/>
-                                        </connections>
                                     </barButtonItem>
                                 </items>
                             </toolbar>
@@ -54,6 +48,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="editToDoButton" destination="22p-jr-pT5" id="t9W-TT-wve"/>
+                        <outlet property="settingButton" destination="rZc-af-cmQ" id="Qcc-Er-Uoj"/>
                         <outlet property="toDoListTableView" destination="byh-nR-ymi" id="qk6-7c-xQH"/>
                     </connections>
                 </viewController>
