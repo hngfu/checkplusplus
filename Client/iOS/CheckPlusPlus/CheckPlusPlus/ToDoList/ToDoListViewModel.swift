@@ -10,12 +10,12 @@ import RxRelay
 
 protocol ToDoListViewModelDelegate: AnyObject {
     func showAuth()
+    func showCreateToDo()
 }
 
 final class ToDoListViewModel {
     
     weak var delegate: ToDoListViewModelDelegate?
-    var todos = BehaviorRelay<[ToDo]>(value: [])
     
     init(delegate: ToDoListViewModelDelegate) {
         self.delegate = delegate
@@ -39,6 +39,10 @@ final class ToDoListViewModel {
         }
     }
     
+    func addToDo() {
+        delegate?.showCreateToDo()
+    }
+    
     func deleteToDo(with id: Int32) {
         var message = C_DeleteToDo()
         message.id = id
@@ -54,8 +58,9 @@ final class ToDoListViewModel {
     private let session = ServerSession()
     private let packetManager = PacketManager()
     private let messageHandler = MessageHandler()
-    
-    private var _todos = [ToDo]()
+
+    private(set) var todos = BehaviorRelay<[ToDo]>(value: [])
+    private let handleQueue = DispatchQueue(label: "handleQueue")
 }
 
 extension ToDoListViewModel: ServerSessionDelegate {
@@ -69,30 +74,40 @@ extension ToDoListViewModel: ServerSessionDelegate {
 extension ToDoListViewModel: MessageHandlerDelegate {
     
     func didHandle(toDos: S_ToDos) {
-        _todos = toDos.todos
-        acceptToDos()
+        handleQueue.async { [weak self] in
+            guard let `self` = self else { return }
+            self.todos.accept(toDos.todos)
+        }
     }
     
     func didHandle(addedToDo: S_AddedToDo) {
-        var todo = ToDo()
-        todo.id = addedToDo.id
-        todo.content = addedToDo.content
-        _todos.append(todo)
-        acceptToDos()
+        handleQueue.async { [weak self] in
+            guard let `self` = self else { return }
+            var todo = ToDo()
+            todo.id = addedToDo.id
+            todo.content = addedToDo.content
+            var todos = self.todos.value
+            todos.append(todo)
+            self.todos.accept(todos)
+        }
     }
     
     func didHandle(editedToDo: S_EditedToDo) {
-        guard let index = _todos.firstIndex(where: { $0.id == editedToDo.id }) else { return }
-        _todos[index].content = editedToDo.content
-        acceptToDos()
+        handleQueue.async { [weak self] in
+            guard let `self` = self else { return }
+            var todos = self.todos.value
+            guard let index = todos.firstIndex(where: { $0.id == editedToDo.id }) else { return }
+            todos[index].content = editedToDo.content
+            self.todos.accept(todos)
+        }
     }
     
     func didHandle(deletedToDo: S_DeletedToDo) {
-        _todos = _todos.filter { $0.id != deletedToDo.id }
-        acceptToDos()
-    }
-    
-    private func acceptToDos() {
-        todos.accept(_todos)
+        handleQueue.async { [weak self] in
+            guard let `self` = self else { return }
+            var todos = self.todos.value
+            todos = todos.filter { $0.id != deletedToDo.id }
+            self.todos.accept(todos)
+        }
     }
 }
