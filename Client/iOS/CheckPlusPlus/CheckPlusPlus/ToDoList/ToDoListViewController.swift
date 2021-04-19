@@ -34,8 +34,11 @@ final class ToDoListViewController: UIViewController {
         
         //TableView
         viewModel.todos.bind(to: toDoListTableView.rx.items(cellIdentifier: ToDoTableViewCell.identifier,
-                                                            cellType: ToDoTableViewCell.self)) {_, element, cell in
-            cell.toDoContentLabel.text = element.content
+                                                            cellType: ToDoTableViewCell.self)) { _, todo, cell in
+            cell.toDoContentLabel.text = todo.content
+            cell.checkButton.rx.tap
+                .subscribe(onNext:  { viewModel.deleteToDo(with: todo.id) })
+                .disposed(by: cell.disposeBag)
         }
         .disposed(by: disposeBag)
         

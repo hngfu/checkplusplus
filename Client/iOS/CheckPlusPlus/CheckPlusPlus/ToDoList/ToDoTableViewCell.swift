@@ -6,10 +6,18 @@
 //
 
 import UIKit
+import RxSwift
 
-class ToDoTableViewCell: UITableViewCell {
+final class ToDoTableViewCell: UITableViewCell {
+    
     static let identifier = "toDoTableViewCell"
+    
+    var disposeBag = DisposeBag()
 
     @IBOutlet weak var toDoContentLabel: UILabel!
     @IBOutlet weak var checkButton: UIButton!
+    
+    override func prepareForReuse() {
+        disposeBag = DisposeBag()
+    }
 }

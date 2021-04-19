@@ -39,6 +39,16 @@ final class ToDoListViewModel {
         }
     }
     
+    func deleteToDo(with id: Int32) {
+        var message = C_DeleteToDo()
+        message.id = id
+        let messageID = UInt16(MessageID.cDeleteToDo.rawValue)
+        if let data = try? message.serializedData() {
+            let packet = packetManager.makePacketWith(id: messageID, data: data)
+            session.send(data: packet)
+        }
+    }
+    
     //MARK: - Private
     private let keychainManager = KeychainManager()
     private let session = ServerSession()
