@@ -7,10 +7,10 @@
 
 import Foundation
 import RxRelay
+import SwiftProtobuf
 
 protocol ToDoListViewModelDelegate: AnyObject {
     func showAuth()
-    func showCreateToDo()
 }
 
 final class ToDoListViewModel {
@@ -30,27 +30,28 @@ final class ToDoListViewModel {
     func start(with uid: String) {
         keychainManager.set(uid: uid)
         
-        var getToDosMessage = C_GetToDos()
-        getToDosMessage.uid = uid
-        let id = UInt16(MessageID.cGetToDoList.rawValue)
-        if let data = try? getToDosMessage.serializedData() {
-            let packet = packetManager.makePacketWith(id: id, data: data)
-            session.send(data: packet)
-        }
+        var message = C_GetToDos()
+        message.uid = uid
+        send(message: message, with: .cGetToDoList)
     }
     
-    func addToDo() {
-        delegate?.showCreateToDo()
+    func addToDo(with content: String) {
+        var message = C_AddToDo()
+        message.content = content
+        send(message: message, with: .cAddToDo)
+    }
+    
+    func editToDo(with id: Int32, content: String) {
+        var message = C_EditToDo()
+        message.content = content
+        message.id = id
+        send(message: message, with: .cEditToDo)
     }
     
     func deleteToDo(with id: Int32) {
         var message = C_DeleteToDo()
         message.id = id
-        let messageID = UInt16(MessageID.cDeleteToDo.rawValue)
-        if let data = try? message.serializedData() {
-            let packet = packetManager.makePacketWith(id: messageID, data: data)
-            session.send(data: packet)
-        }
+        send(message: message, with: .cDeleteToDo)
     }
     
     //MARK: - Private
@@ -61,6 +62,14 @@ final class ToDoListViewModel {
 
     private(set) var todos = BehaviorRelay<[ToDo]>(value: [])
     private let handleQueue = DispatchQueue(label: "handleQueue")
+    
+    private func send(message: Message, with id: MessageID) {
+        let messageID = UInt16(id.rawValue)
+        if let data = try? message.serializedData() {
+            let packet = packetManager.makePacketWith(id: messageID, data: data)
+            session.send(data: packet)
+        }
+    }
 }
 
 extension ToDoListViewModel: ServerSessionDelegate {
