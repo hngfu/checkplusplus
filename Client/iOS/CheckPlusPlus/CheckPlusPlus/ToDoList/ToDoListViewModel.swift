@@ -20,6 +20,7 @@ final class ToDoListViewModel {
     init(delegate: ToDoListViewModelDelegate) {
         self.delegate = delegate
         session.delegate = self
+        messageHandler.delegate = self
         
         if keychainManager.getUID() == nil {
             delegate.showAuth()
@@ -42,11 +43,46 @@ final class ToDoListViewModel {
     private let keychainManager = KeychainManager()
     private let session = ServerSession()
     private let packetManager = PacketManager()
+    private let messageHandler = MessageHandler()
+    
+    private var _todos = [ToDo]()
 }
 
 extension ToDoListViewModel: ServerSessionDelegate {
     
     func didRead(data: Data) {
         let (messageID, message) = packetManager.parse(packet: data)
+        messageHandler.handle(message: message, with: messageID)
+    }
+}
+
+extension ToDoListViewModel: MessageHandlerDelegate {
+    
+    func didHandle(toDos: S_ToDos) {
+        _todos = toDos.todos
+        acceptToDos()
+    }
+    
+    func didHandle(addedToDo: S_AddedToDo) {
+        var todo = ToDo()
+        todo.id = addedToDo.id
+        todo.content = addedToDo.content
+        _todos.append(todo)
+        acceptToDos()
+    }
+    
+    func didHandle(editedToDo: S_EditedToDo) {
+        guard let index = _todos.firstIndex(where: { $0.id == editedToDo.id }) else { return }
+        _todos[index].content = editedToDo.content
+        acceptToDos()
+    }
+    
+    func didHandle(deletedToDo: S_DeletedToDo) {
+        _todos = _todos.filter { $0.id != deletedToDo.id }
+        acceptToDos()
+    }
+    
+    private func acceptToDos() {
+        todos.accept(_todos)
     }
 }
