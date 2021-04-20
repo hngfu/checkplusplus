@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EditToDoViewController" customModule="CheckPlusPlus" customModuleProvider="target">
+            <connections>
+                <outlet property="inputTextView" destination="dg0-Tb-K9M" id="pOt-aF-oq3"/>
+                <outlet property="textViewBottomConstraint" destination="TDr-XX-6MP" id="fQa-hT-K2P"/>
+                <outlet property="view" destination="ENq-yK-zEr" id="fIC-1G-C3G"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="ENq-yK-zEr">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dg0-Tb-K9M">
+                    <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="tintColor" systemColor="systemIndigoColor"/>
+                    <color key="textColor" systemColor="labelColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KUM-Ps-eau">
+                    <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <items>
+                        <navigationItem title="Edit ToDo" id="WYF-qW-0wf">
+                            <barButtonItem key="leftBarButtonItem" title="닫기" id="Fc2-5w-Q19">
+                                <color key="tintColor" systemColor="systemIndigoColor"/>
+                                <connections>
+                                    <action selector="tapCloseButton:" destination="-1" id="dgy-Zw-vtx"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem key="rightBarButtonItem" title="수정" id="VvS-dk-3Nb">
+                                <color key="tintColor" systemColor="systemIndigoColor"/>
+                                <connections>
+                                    <action selector="tapEditButton:" destination="-1" id="hcN-BB-1un"/>
+                                </connections>
+                            </barButtonItem>
+                        </navigationItem>
+                    </items>
+                </navigationBar>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="9dm-sc-mKU"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="9dm-sc-mKU" firstAttribute="trailing" secondItem="dg0-Tb-K9M" secondAttribute="trailing" id="Ddh-ZQ-q6w"/>
+                <constraint firstItem="KUM-Ps-eau" firstAttribute="trailing" secondItem="9dm-sc-mKU" secondAttribute="trailing" id="MRn-hE-dTx"/>
+                <constraint firstItem="dg0-Tb-K9M" firstAttribute="leading" secondItem="9dm-sc-mKU" secondAttribute="leading" id="Qaj-S4-htp"/>
+                <constraint firstItem="9dm-sc-mKU" firstAttribute="bottom" secondItem="dg0-Tb-K9M" secondAttribute="bottom" id="TDr-XX-6MP"/>
+                <constraint firstItem="KUM-Ps-eau" firstAttribute="leading" secondItem="9dm-sc-mKU" secondAttribute="leading" id="YdG-QH-S5R"/>
+                <constraint firstItem="dg0-Tb-K9M" firstAttribute="top" secondItem="KUM-Ps-eau" secondAttribute="bottom" id="lM6-Is-3mY"/>
+                <constraint firstItem="KUM-Ps-eau" firstAttribute="top" secondItem="9dm-sc-mKU" secondAttribute="top" id="lr4-be-PPp"/>
+            </constraints>
+            <point key="canvasLocation" x="-204.34782608695653" y="105.80357142857143"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

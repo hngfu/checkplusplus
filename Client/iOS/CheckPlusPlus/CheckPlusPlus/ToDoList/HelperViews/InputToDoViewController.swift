@@ -1,5 +1,5 @@
 //
-//  CreateToDoViewController.swift
+//  InputToDoViewController.swift
 //  CheckPlusPlus
 //
 //  Created by 조재흥 on 2021/04/20.
@@ -7,29 +7,19 @@
 
 import UIKit
 
-final class CreateToDoViewController: UIViewController {
-
+class InputToDoViewController: UIViewController {
+    
     @IBOutlet weak var inputTextView: UITextView!
     @IBOutlet weak var textViewBottomConstraint: NSLayoutConstraint!
-    
-    var viewModel: ToDoListViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         inputTextView.delegate = self
+        inputTextView.textContainerInset = UIEdgeInsets(top: 4, left: 6, bottom: 4, right: 6);
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow),
                                                name: UIResponder.keyboardWillShowNotification, object: nil)
         inputTextView.becomeFirstResponder()
-    }
-    
-    @IBAction func tapAddButton(_ sender: UIBarButtonItem) {
-        guard let content = inputTextView.text,
-              inputTextView.text.isEmpty == false else {
-            return
-        }
-        viewModel?.addToDo(with: content)
-        dismiss(animated: true)
     }
     
     @IBAction func tapCloseButton(_ sender: UIBarButtonItem) {
@@ -47,9 +37,10 @@ final class CreateToDoViewController: UIViewController {
     }
 }
 
-extension CreateToDoViewController: UITextViewDelegate {
+extension InputToDoViewController: UITextViewDelegate {
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        return (textView.text.count + text.count) <= 100
+        let maximumCharacterCount = 100
+        return (textView.text.count + text.count) <= maximumCharacterCount
     }
 }
