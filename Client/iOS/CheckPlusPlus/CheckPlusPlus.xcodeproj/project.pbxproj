@@ -33,6 +33,8 @@
 		7DBB5032262871C400647F89 /* ServerSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBB5031262871C400647F89 /* ServerSession.swift */; };
 		7DBB509F262C7DC400647F89 /* PacketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBB509E262C7DC400647F89 /* PacketManager.swift */; };
 		7DBB50A2262C860300647F89 /* MessageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBB50A1262C860300647F89 /* MessageHandler.swift */; };
+		7DBB50C3262DDC0300647F89 /* CreateToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBB50C1262DDC0300647F89 /* CreateToDoViewController.swift */; };
+		7DBB50C4262DDC0300647F89 /* CreateToDoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DBB50C2262DDC0300647F89 /* CreateToDoViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +68,8 @@
 		7DBB5031262871C400647F89 /* ServerSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerSession.swift; sourceTree = "<group>"; };
 		7DBB509E262C7DC400647F89 /* PacketManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacketManager.swift; sourceTree = "<group>"; };
 		7DBB50A1262C860300647F89 /* MessageHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageHandler.swift; sourceTree = "<group>"; };
+		7DBB50C1262DDC0300647F89 /* CreateToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateToDoViewController.swift; sourceTree = "<group>"; };
+		7DBB50C2262DDC0300647F89 /* CreateToDoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateToDoViewController.xib; sourceTree = "<group>"; };
 		7FE3C9EE7F77237C04C1BD61 /* Pods_CheckPlusPlus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CheckPlusPlus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -185,6 +189,8 @@
 				7DA8DF352617099300C9C277 /* ToDoListViewController.storyboard */,
 				7DBB50162628601C00647F89 /* ToDoTableViewCell.swift */,
 				7DBB50172628601C00647F89 /* ToDoTableViewCell.xib */,
+				7DBB50C1262DDC0300647F89 /* CreateToDoViewController.swift */,
+				7DBB50C2262DDC0300647F89 /* CreateToDoViewController.xib */,
 			);
 			path = ToDoList;
 			sourceTree = "<group>";
@@ -280,6 +286,7 @@
 				7D6913422619B77E0060AAAD /* AuthPickerViewController.xib in Resources */,
 				7DA8DEC92615AAF400C9C277 /* Assets.xcassets in Resources */,
 				7D69135F2619E1BF0060AAAD /* meerkat-looking-around.json in Resources */,
+				7DBB50C4262DDC0300647F89 /* CreateToDoViewController.xib in Resources */,
 				7DA8DF362617099300C9C277 /* ToDoListViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -360,6 +367,7 @@
 				7DA8DF2C2617086E00C9C277 /* ToDoListCoordinator.swift in Sources */,
 				7DA8DEC02615AAED00C9C277 /* AppDelegate.swift in Sources */,
 				7DBB501426280A8800647F89 /* Packets.pb.swift in Sources */,
+				7DBB50C3262DDC0300647F89 /* CreateToDoViewController.swift in Sources */,
 				7DBB50A2262C860300647F89 /* MessageHandler.swift in Sources */,
 				7DBB5032262871C400647F89 /* ServerSession.swift in Sources */,
 				7DBB50182628601C00647F89 /* ToDoTableViewCell.swift in Sources */,

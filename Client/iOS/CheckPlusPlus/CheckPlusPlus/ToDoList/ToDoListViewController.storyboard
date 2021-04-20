@@ -48,7 +48,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="editToDoButton" destination="22p-jr-pT5" id="t9W-TT-wve"/>
+                        <outlet property="addToDoButton" destination="22p-jr-pT5" id="t9W-TT-wve"/>
                         <outlet property="settingButton" destination="rZc-af-cmQ" id="Qcc-Er-Uoj"/>
                         <outlet property="toDoListTableView" destination="byh-nR-ymi" id="qk6-7c-xQH"/>
                     </connections>

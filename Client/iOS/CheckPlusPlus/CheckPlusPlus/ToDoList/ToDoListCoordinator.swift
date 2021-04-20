@@ -9,6 +9,8 @@ import UIKit
 
 final class ToDoListCoordinator: Coordinator {
     
+    var viewModel: ToDoListViewModel?
+    
     func start() {
         viewModel = ToDoListViewModel(delegate: self)
         
@@ -17,13 +19,10 @@ final class ToDoListCoordinator: Coordinator {
         vc.viewModel = viewModel
         navigationController.pushViewController(vc, animated: false)
     }
-    
-    //MARK: - Private
-    var viewModel: ToDoListViewModel?
 }
 
 extension ToDoListCoordinator: ToDoListViewModelDelegate {
-    
+
     func showAuth() {
         let authCoord = AuthCoordinator(navigationController: navigationController)
         childCoordinators[AuthCoordinator] = authCoord

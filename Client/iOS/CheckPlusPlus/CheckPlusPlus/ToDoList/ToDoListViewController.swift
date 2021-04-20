@@ -13,7 +13,7 @@ final class ToDoListViewController: UIViewController {
     
     @IBOutlet weak var toDoListTableView: UITableView!
     @IBOutlet weak var settingButton: UIBarButtonItem!
-    @IBOutlet weak var editToDoButton: UIBarButtonItem!
+    @IBOutlet weak var addToDoButton: UIBarButtonItem!
     
     var viewModel: ToDoListViewModel?
     
@@ -42,6 +42,13 @@ final class ToDoListViewController: UIViewController {
         }
         .disposed(by: disposeBag)
         
-        
+        addToDoButton.rx.tap
+            .bind { [weak self] in
+                guard let `self` = self else { return }
+                let vc = CreateToDoViewController(nibName: "\(CreateToDoViewController.self)", bundle: nil)
+                vc.viewModel = viewModel
+                self.present(vc, animated: true)
+            }
+            .disposed(by: disposeBag)
     }
 }
