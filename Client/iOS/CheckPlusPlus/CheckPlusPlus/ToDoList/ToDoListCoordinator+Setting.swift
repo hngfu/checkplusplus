@@ -9,5 +9,7 @@ import Foundation
 
 extension ToDoListCoordinator: SettingCoordinatorDelegate {
     
-
+    func settingCoordinatorDidFinish() {
+        childCoordinators[SettingCoordinator] = nil
+    }
 }

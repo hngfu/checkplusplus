@@ -7,6 +7,10 @@
 
 import Foundation
 
+protocol SettingViewModelDelegate {
+    func settingViewModelDidSetOptions()
+}
+
 final class SettingViewModel {
     
 }

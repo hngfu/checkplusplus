@@ -8,7 +8,7 @@
 import UIKit
 
 protocol SettingCoordinatorDelegate: AnyObject {
-    
+    func settingCoordinatorDidFinish()
 }
 
 final class SettingCoordinator: Coordinator {
@@ -16,11 +16,21 @@ final class SettingCoordinator: Coordinator {
     weak var delegate: SettingCoordinatorDelegate?
     
     func start() {
-        let vc = SettingViewController(nibName: "\(SettingViewController.self)", bundle: nil)
+        let sb = UIStoryboard(name: "\(SettingViewController.self)", bundle: nil)
+        guard let nc = sb.instantiateInitialViewController() as? UINavigationController,
+              let vc = nc.topViewController as? SettingViewController else { return }
         vc.viewModel = viewModel
-        navigationController.pushViewController(vc, animated: true)
+        nc.modalPresentationStyle = .fullScreen
+        navigationController.present(nc, animated: true)
     }
     
     //MARK: - Private
     private let viewModel = SettingViewModel()
+}
+
+extension SettingCoordinator: SettingViewModelDelegate {
+    
+    func settingViewModelDidSetOptions() {
+        delegate?.settingCoordinatorDidFinish()
+    }
 }

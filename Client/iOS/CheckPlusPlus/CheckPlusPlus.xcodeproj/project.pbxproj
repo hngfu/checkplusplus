@@ -47,9 +47,9 @@
 		7DBB50EA263003C400647F89 /* check-box.json in Resources */ = {isa = PBXBuildFile; fileRef = 7DBB50E9263003C400647F89 /* check-box.json */; };
 		7DBB5107263044B000647F89 /* SettingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBB5106263044B000647F89 /* SettingCoordinator.swift */; };
 		7DBB510B263044D400647F89 /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBB510A263044D400647F89 /* SettingViewModel.swift */; };
-		7DBB510F263045E000647F89 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBB510D263045E000647F89 /* SettingViewController.swift */; };
-		7DBB5110263045E000647F89 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DBB510E263045E000647F89 /* SettingViewController.xib */; };
 		7DBB5114263046AD00647F89 /* ToDoListCoordinator+Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBB5113263046AD00647F89 /* ToDoListCoordinator+Setting.swift */; };
+		7DBB512326304F8800647F89 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBB512226304F8700647F89 /* SettingViewController.swift */; };
+		7DBB512626304F9400647F89 /* SettingViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DBB512526304F9400647F89 /* SettingViewController.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,9 +97,9 @@
 		7DBB50E9263003C400647F89 /* check-box.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "check-box.json"; sourceTree = "<group>"; };
 		7DBB5106263044B000647F89 /* SettingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCoordinator.swift; sourceTree = "<group>"; };
 		7DBB510A263044D400647F89 /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
-		7DBB510D263045E000647F89 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
-		7DBB510E263045E000647F89 /* SettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
 		7DBB5113263046AD00647F89 /* ToDoListCoordinator+Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToDoListCoordinator+Setting.swift"; sourceTree = "<group>"; };
+		7DBB512226304F8700647F89 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		7DBB512526304F9400647F89 /* SettingViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingViewController.storyboard; sourceTree = "<group>"; };
 		7FE3C9EE7F77237C04C1BD61 /* Pods_CheckPlusPlus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CheckPlusPlus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -258,8 +258,8 @@
 			children = (
 				7DBB5106263044B000647F89 /* SettingCoordinator.swift */,
 				7DBB510A263044D400647F89 /* SettingViewModel.swift */,
-				7DBB510D263045E000647F89 /* SettingViewController.swift */,
-				7DBB510E263045E000647F89 /* SettingViewController.xib */,
+				7DBB512226304F8700647F89 /* SettingViewController.swift */,
+				7DBB512526304F9400647F89 /* SettingViewController.storyboard */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -342,7 +342,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7DA8DECC2615AAF400C9C277 /* LaunchScreen.storyboard in Resources */,
-				7DBB5110263045E000647F89 /* SettingViewController.xib in Resources */,
 				7DBB50E2262FAD4900647F89 /* clap-together.json in Resources */,
 				7DBB50EA263003C400647F89 /* check-box.json in Resources */,
 				7DBB50192628601C00647F89 /* ToDoTableViewCell.xib in Resources */,
@@ -354,6 +353,7 @@
 				7DBB50E4262FAD4900647F89 /* check.json in Resources */,
 				7D69135F2619E1BF0060AAAD /* meerkat-looking-around.json in Resources */,
 				7DBB50C4262DDC0300647F89 /* CreateToDoViewController.xib in Resources */,
+				7DBB512626304F9400647F89 /* SettingViewController.storyboard in Resources */,
 				7DBB50CB262EEB6500647F89 /* EditToDoViewController.xib in Resources */,
 				7DA8DF362617099300C9C277 /* ToDoListViewController.storyboard in Resources */,
 			);
@@ -428,7 +428,6 @@
 				7D69137A2619F8D30060AAAD /* KeychainManager.swift in Sources */,
 				7DA8DEE02615C10100C9C277 /* MetaTypeDictionary.swift in Sources */,
 				7DA8DEFF2616CFEB00C9C277 /* AuthCoordinator.swift in Sources */,
-				7DBB510F263045E000647F89 /* SettingViewController.swift in Sources */,
 				7DA8DEDC2615B58100C9C277 /* Coordinator.swift in Sources */,
 				7DA8DF282617086100C9C277 /* ToDoListViewModel.swift in Sources */,
 				7DBB510B263044D400647F89 /* SettingViewModel.swift in Sources */,
@@ -449,6 +448,7 @@
 				7DA8DEC22615AAED00C9C277 /* SceneDelegate.swift in Sources */,
 				7DA8DEF42615C71B00C9C277 /* RootCoordinator.swift in Sources */,
 				7D691383261AF7FF0060AAAD /* ToDoListCoordinator+Auth.swift in Sources */,
+				7DBB512326304F8800647F89 /* SettingViewController.swift in Sources */,
 				7DA8DF302617087A00C9C277 /* ToDoListViewController.swift in Sources */,
 				7DBB50D2262F02E000647F89 /* InputToDoViewController.swift in Sources */,
 				7DBB50E7262FD55C00647F89 /* UsesAutoLayout.swift in Sources */,
