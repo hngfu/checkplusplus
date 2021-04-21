@@ -7,6 +7,7 @@
 
 import UIKit
 import RxSwift
+import Lottie
 
 final class ToDoTableViewCell: UITableViewCell {
     
@@ -15,9 +16,20 @@ final class ToDoTableViewCell: UITableViewCell {
     var disposeBag = DisposeBag()
 
     @IBOutlet weak var toDoContentLabel: UILabel!
-    @IBOutlet weak var checkButton: UIButton!
+    @IBOutlet weak var checkBoxAnimationView: AnimationView!
+    let tapGestureRecognizer = UITapGestureRecognizer()
     
     override func prepareForReuse() {
         disposeBag = DisposeBag()
+    }
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        setup()
+    }
+    
+    //MARK: - Private
+    private func setup() {
+        checkBoxAnimationView.addGestureRecognizer(tapGestureRecognizer)
     }
 }

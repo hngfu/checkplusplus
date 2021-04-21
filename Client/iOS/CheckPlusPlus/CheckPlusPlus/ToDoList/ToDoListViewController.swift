@@ -8,6 +8,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import Lottie
 
 final class ToDoListViewController: UIViewController {
     
@@ -45,16 +46,15 @@ final class ToDoListViewController: UIViewController {
         viewModel.todos.bind(to: toDoListTableView.rx.items(cellIdentifier: ToDoTableViewCell.identifier,
                                                             cellType: ToDoTableViewCell.self)) { _, todo, cell in
             cell.toDoContentLabel.text = todo.content
-            cell.checkButton.rx.tap
-                .bind { [weak self] in
-                    guard let `self` = self else { return }
+            cell.tapGestureRecognizer.rx.event
+                .bind { _ in 
+                    cell.checkBoxAnimationView.play(fromFrame: 30, toFrame: 50, loopMode: .playOnce)
                     let alert = self.makeAlertController {
                         self.positiveFeedbackView.play()
                         self.viewModel?.deleteToDo(with: todo.id)
                     } cancelHandler: {
-                        //TODO: checkbutton -> animatable, reverse
+                        cell.checkBoxAnimationView.play(fromFrame: 90, toFrame: 110, loopMode: .playOnce)
                     }
-
                     self.present(alert, animated: true)
                 }
                 .disposed(by: cell.disposeBag)
@@ -62,8 +62,7 @@ final class ToDoListViewController: UIViewController {
         .disposed(by: disposeBag)
         
         toDoListTableView.rx.modelSelected(ToDo.self)
-            .bind { [weak self] todo in
-                guard let `self` = self else { return }
+            .bind { todo in
                 let vc = EditToDoViewController(nibName: "\(EditToDoViewController.self)", bundle: nil)
                 vc.viewModel = viewModel
                 vc.todo = todo

@@ -44,6 +44,7 @@
 		7DBB50E3262FAD4900647F89 /* thumbs-up.json in Resources */ = {isa = PBXBuildFile; fileRef = 7DBB50DF262FAD4900647F89 /* thumbs-up.json */; };
 		7DBB50E4262FAD4900647F89 /* check.json in Resources */ = {isa = PBXBuildFile; fileRef = 7DBB50E0262FAD4900647F89 /* check.json */; };
 		7DBB50E7262FD55C00647F89 /* UsesAutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBB50E6262FD55C00647F89 /* UsesAutoLayout.swift */; };
+		7DBB50EA263003C400647F89 /* check-box.json in Resources */ = {isa = PBXBuildFile; fileRef = 7DBB50E9263003C400647F89 /* check-box.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +89,7 @@
 		7DBB50DF262FAD4900647F89 /* thumbs-up.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "thumbs-up.json"; sourceTree = "<group>"; };
 		7DBB50E0262FAD4900647F89 /* check.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = check.json; sourceTree = "<group>"; };
 		7DBB50E6262FD55C00647F89 /* UsesAutoLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsesAutoLayout.swift; sourceTree = "<group>"; };
+		7DBB50E9263003C400647F89 /* check-box.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "check-box.json"; sourceTree = "<group>"; };
 		7FE3C9EE7F77237C04C1BD61 /* Pods_CheckPlusPlus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CheckPlusPlus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -110,6 +112,7 @@
 				7DBB50E0262FAD4900647F89 /* check.json */,
 				7DBB50DE262FAD4800647F89 /* clap-together.json */,
 				7DBB50DF262FAD4900647F89 /* thumbs-up.json */,
+				7DBB50E9263003C400647F89 /* check-box.json */,
 				7DBB50DD262FAD4800647F89 /* wow.json */,
 			);
 			path = LottieAssets;
@@ -317,6 +320,7 @@
 			files = (
 				7DA8DECC2615AAF400C9C277 /* LaunchScreen.storyboard in Resources */,
 				7DBB50E2262FAD4900647F89 /* clap-together.json in Resources */,
+				7DBB50EA263003C400647F89 /* check-box.json in Resources */,
 				7DBB50192628601C00647F89 /* ToDoTableViewCell.xib in Resources */,
 				7DBB50E3262FAD4900647F89 /* thumbs-up.json in Resources */,
 				7D691319261975B40060AAAD /* GoogleService-Info.plist in Resources */,
