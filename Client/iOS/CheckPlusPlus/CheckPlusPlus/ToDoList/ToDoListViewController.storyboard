@@ -40,26 +40,37 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <sections/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AxT-h9-2Uw" customClass="PositiveFeedbackView" customModule="CheckPlusPlus" customModuleProvider="target">
+                                <rect key="frame" x="82" y="301" width="250" height="294"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="Oxb-3h-bP0"/>
+                                    <constraint firstAttribute="height" constant="294" id="aHU-0K-AHV"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Iwd-1F-wum"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Iwd-1F-wum" firstAttribute="bottom" secondItem="AGT-Cb-I3N" secondAttribute="bottom" id="Mbh-DU-36G"/>
+                            <constraint firstItem="AxT-h9-2Uw" firstAttribute="centerX" secondItem="9VZ-B8-tUh" secondAttribute="centerX" id="Rlc-N8-CKZ"/>
                             <constraint firstItem="AGT-Cb-I3N" firstAttribute="top" secondItem="byh-nR-ymi" secondAttribute="bottom" id="hBZ-Ri-Qfy"/>
                             <constraint firstItem="byh-nR-ymi" firstAttribute="top" secondItem="Iwd-1F-wum" secondAttribute="top" id="i0f-I6-9Df"/>
                             <constraint firstItem="Iwd-1F-wum" firstAttribute="trailing" secondItem="byh-nR-ymi" secondAttribute="trailing" id="kdd-rw-5ir"/>
+                            <constraint firstItem="AxT-h9-2Uw" firstAttribute="centerY" secondItem="9VZ-B8-tUh" secondAttribute="centerY" id="myw-aP-5PL"/>
                             <constraint firstItem="AGT-Cb-I3N" firstAttribute="leading" secondItem="Iwd-1F-wum" secondAttribute="leading" id="p4S-6J-ZmC"/>
                             <constraint firstItem="AGT-Cb-I3N" firstAttribute="trailing" secondItem="Iwd-1F-wum" secondAttribute="trailing" id="sVY-gb-gUG"/>
                             <constraint firstItem="byh-nR-ymi" firstAttribute="leading" secondItem="Iwd-1F-wum" secondAttribute="leading" id="xpD-KS-rk2"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="positiveFeedbackView" destination="AxT-h9-2Uw" id="9Ug-h5-PYk"/>
                         <outlet property="toDoListTableView" destination="byh-nR-ymi" id="qk6-7c-xQH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qqe-ID-EyA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="212" y="134"/>
+            <point key="canvasLocation" x="211.59420289855075" y="133.92857142857142"/>
         </scene>
     </scenes>
     <resources>

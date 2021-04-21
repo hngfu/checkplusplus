@@ -38,6 +38,12 @@
 		7DBB50CA262EEB6500647F89 /* EditToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBB50C8262EEB6500647F89 /* EditToDoViewController.swift */; };
 		7DBB50CB262EEB6500647F89 /* EditToDoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DBB50C9262EEB6500647F89 /* EditToDoViewController.xib */; };
 		7DBB50D2262F02E000647F89 /* InputToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBB50D1262F02E000647F89 /* InputToDoViewController.swift */; };
+		7DBB50DB262F2D8A00647F89 /* PositiveFeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBB50DA262F2D8A00647F89 /* PositiveFeedbackView.swift */; };
+		7DBB50E1262FAD4900647F89 /* wow.json in Resources */ = {isa = PBXBuildFile; fileRef = 7DBB50DD262FAD4800647F89 /* wow.json */; };
+		7DBB50E2262FAD4900647F89 /* clap-together.json in Resources */ = {isa = PBXBuildFile; fileRef = 7DBB50DE262FAD4800647F89 /* clap-together.json */; };
+		7DBB50E3262FAD4900647F89 /* thumbs-up.json in Resources */ = {isa = PBXBuildFile; fileRef = 7DBB50DF262FAD4900647F89 /* thumbs-up.json */; };
+		7DBB50E4262FAD4900647F89 /* check.json in Resources */ = {isa = PBXBuildFile; fileRef = 7DBB50E0262FAD4900647F89 /* check.json */; };
+		7DBB50E7262FD55C00647F89 /* UsesAutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBB50E6262FD55C00647F89 /* UsesAutoLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +82,12 @@
 		7DBB50C8262EEB6500647F89 /* EditToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditToDoViewController.swift; sourceTree = "<group>"; };
 		7DBB50C9262EEB6500647F89 /* EditToDoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditToDoViewController.xib; sourceTree = "<group>"; };
 		7DBB50D1262F02E000647F89 /* InputToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputToDoViewController.swift; sourceTree = "<group>"; };
+		7DBB50DA262F2D8A00647F89 /* PositiveFeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositiveFeedbackView.swift; sourceTree = "<group>"; };
+		7DBB50DD262FAD4800647F89 /* wow.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = wow.json; sourceTree = "<group>"; };
+		7DBB50DE262FAD4800647F89 /* clap-together.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "clap-together.json"; sourceTree = "<group>"; };
+		7DBB50DF262FAD4900647F89 /* thumbs-up.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "thumbs-up.json"; sourceTree = "<group>"; };
+		7DBB50E0262FAD4900647F89 /* check.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = check.json; sourceTree = "<group>"; };
+		7DBB50E6262FD55C00647F89 /* UsesAutoLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsesAutoLayout.swift; sourceTree = "<group>"; };
 		7FE3C9EE7F77237C04C1BD61 /* Pods_CheckPlusPlus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CheckPlusPlus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -95,6 +107,10 @@
 			isa = PBXGroup;
 			children = (
 				7D69135E2619E1BF0060AAAD /* meerkat-looking-around.json */,
+				7DBB50E0262FAD4900647F89 /* check.json */,
+				7DBB50DE262FAD4800647F89 /* clap-together.json */,
+				7DBB50DF262FAD4900647F89 /* thumbs-up.json */,
+				7DBB50DD262FAD4800647F89 /* wow.json */,
 			);
 			path = LottieAssets;
 			sourceTree = "<group>";
@@ -120,14 +136,14 @@
 		7DA8DEBE2615AAED00C9C277 /* CheckPlusPlus */ = {
 			isa = PBXGroup;
 			children = (
-				7DBB5012262809F900647F89 /* Models */,
-				7D69131F2619A9E10060AAAD /* CheckPlusPlus.entitlements */,
 				7DA8DF262617084700C9C277 /* ToDoList */,
 				7DA8DEFD2616CFDB00C9C277 /* Authentication */,
 				7DA8DEF22615C71000C9C277 /* Root */,
-				7DA8DEDE2615C0E200C9C277 /* Utils */,
 				7DA8DEE52615C27300C9C277 /* App */,
+				7DA8DEDE2615C0E200C9C277 /* Utils */,
+				7DBB5012262809F900647F89 /* Models */,
 				7DA8DEE32615C26300C9C277 /* Core */,
+				7D69131F2619A9E10060AAAD /* CheckPlusPlus.entitlements */,
 				7DA8DEC82615AAF400C9C277 /* Assets.xcassets */,
 				7D69135D2619E1B50060AAAD /* LottieAssets */,
 				7DA8DECA2615AAF400C9C277 /* LaunchScreen.storyboard */,
@@ -146,6 +162,7 @@
 				7D69137C2619FFB60060AAAD /* Private.swift */,
 				7DBB5031262871C400647F89 /* ServerSession.swift */,
 				7DBB509E262C7DC400647F89 /* PacketManager.swift */,
+				7DBB50E6262FD55C00647F89 /* UsesAutoLayout.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -216,6 +233,7 @@
 				7DBB50C2262DDC0300647F89 /* CreateToDoViewController.xib */,
 				7DBB50C8262EEB6500647F89 /* EditToDoViewController.swift */,
 				7DBB50C9262EEB6500647F89 /* EditToDoViewController.xib */,
+				7DBB50DA262F2D8A00647F89 /* PositiveFeedbackView.swift */,
 			);
 			path = HelperViews;
 			sourceTree = "<group>";
@@ -298,10 +316,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				7DA8DECC2615AAF400C9C277 /* LaunchScreen.storyboard in Resources */,
+				7DBB50E2262FAD4900647F89 /* clap-together.json in Resources */,
 				7DBB50192628601C00647F89 /* ToDoTableViewCell.xib in Resources */,
+				7DBB50E3262FAD4900647F89 /* thumbs-up.json in Resources */,
 				7D691319261975B40060AAAD /* GoogleService-Info.plist in Resources */,
+				7DBB50E1262FAD4900647F89 /* wow.json in Resources */,
 				7D6913422619B77E0060AAAD /* AuthPickerViewController.xib in Resources */,
 				7DA8DEC92615AAF400C9C277 /* Assets.xcassets in Resources */,
+				7DBB50E4262FAD4900647F89 /* check.json in Resources */,
 				7D69135F2619E1BF0060AAAD /* meerkat-looking-around.json in Resources */,
 				7DBB50C4262DDC0300647F89 /* CreateToDoViewController.xib in Resources */,
 				7DBB50CB262EEB6500647F89 /* EditToDoViewController.xib in Resources */,
@@ -391,11 +413,13 @@
 				7DBB5032262871C400647F89 /* ServerSession.swift in Sources */,
 				7DBB50182628601C00647F89 /* ToDoTableViewCell.swift in Sources */,
 				7D69137D2619FFB60060AAAD /* Private.swift in Sources */,
+				7DBB50DB262F2D8A00647F89 /* PositiveFeedbackView.swift in Sources */,
 				7DA8DEC22615AAED00C9C277 /* SceneDelegate.swift in Sources */,
 				7DA8DEF42615C71B00C9C277 /* RootCoordinator.swift in Sources */,
 				7D691383261AF7FF0060AAAD /* ToDoListCoordinator+Auth.swift in Sources */,
 				7DA8DF302617087A00C9C277 /* ToDoListViewController.swift in Sources */,
 				7DBB50D2262F02E000647F89 /* InputToDoViewController.swift in Sources */,
+				7DBB50E7262FD55C00647F89 /* UsesAutoLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

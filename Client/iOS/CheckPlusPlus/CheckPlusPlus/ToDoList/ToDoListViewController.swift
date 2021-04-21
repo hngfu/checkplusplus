@@ -12,7 +12,8 @@ import RxCocoa
 final class ToDoListViewController: UIViewController {
     
     @IBOutlet weak var toDoListTableView: UITableView!
-
+    @IBOutlet weak var positiveFeedbackView: PositiveFeedbackView!
+    
     var viewModel: ToDoListViewModel?
     
     override func viewDidLoad() {
@@ -31,7 +32,7 @@ final class ToDoListViewController: UIViewController {
     }
     
     @IBAction func tapSettingButton(_ sender: UIBarButtonItem) {
-        
+
     }
     
     //MARK: - Private
@@ -45,7 +46,17 @@ final class ToDoListViewController: UIViewController {
                                                             cellType: ToDoTableViewCell.self)) { _, todo, cell in
             cell.toDoContentLabel.text = todo.content
             cell.checkButton.rx.tap
-                .subscribe(onNext:  { viewModel.deleteToDo(with: todo.id) })
+                .bind { [weak self] in
+                    guard let `self` = self else { return }
+                    let alert = self.makeAlertController {
+                        self.positiveFeedbackView.play()
+                        self.viewModel?.deleteToDo(with: todo.id)
+                    } cancelHandler: {
+                        //TODO: checkbutton -> animatable, reverse
+                    }
+
+                    self.present(alert, animated: true)
+                }
                 .disposed(by: cell.disposeBag)
         }
         .disposed(by: disposeBag)
@@ -59,5 +70,20 @@ final class ToDoListViewController: UIViewController {
                 self.present(vc, animated: true)
             }
             .disposed(by: disposeBag)
+    }
+    
+    private func makeAlertController(completeHandler: @escaping (() -> Void), cancelHandler: (() -> Void)?) -> UIAlertController {
+        let alertController = UIAlertController(title: nil,
+                                                message: "완료 처리하시겠습니까?",
+                                                preferredStyle: .alert)
+        let completeAction = UIAlertAction(title: "완료", style: .default) { _ in
+            completeHandler()
+        }
+        alertController.addAction(completeAction)
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel) { _ in
+            cancelHandler?()
+        }
+        alertController.addAction(cancelAction)
+        return alertController
     }
 }
