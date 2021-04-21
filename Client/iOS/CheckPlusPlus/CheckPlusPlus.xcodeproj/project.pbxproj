@@ -45,6 +45,11 @@
 		7DBB50E4262FAD4900647F89 /* check.json in Resources */ = {isa = PBXBuildFile; fileRef = 7DBB50E0262FAD4900647F89 /* check.json */; };
 		7DBB50E7262FD55C00647F89 /* UsesAutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBB50E6262FD55C00647F89 /* UsesAutoLayout.swift */; };
 		7DBB50EA263003C400647F89 /* check-box.json in Resources */ = {isa = PBXBuildFile; fileRef = 7DBB50E9263003C400647F89 /* check-box.json */; };
+		7DBB5107263044B000647F89 /* SettingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBB5106263044B000647F89 /* SettingCoordinator.swift */; };
+		7DBB510B263044D400647F89 /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBB510A263044D400647F89 /* SettingViewModel.swift */; };
+		7DBB510F263045E000647F89 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBB510D263045E000647F89 /* SettingViewController.swift */; };
+		7DBB5110263045E000647F89 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DBB510E263045E000647F89 /* SettingViewController.xib */; };
+		7DBB5114263046AD00647F89 /* ToDoListCoordinator+Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBB5113263046AD00647F89 /* ToDoListCoordinator+Setting.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +95,11 @@
 		7DBB50E0262FAD4900647F89 /* check.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = check.json; sourceTree = "<group>"; };
 		7DBB50E6262FD55C00647F89 /* UsesAutoLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsesAutoLayout.swift; sourceTree = "<group>"; };
 		7DBB50E9263003C400647F89 /* check-box.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "check-box.json"; sourceTree = "<group>"; };
+		7DBB5106263044B000647F89 /* SettingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCoordinator.swift; sourceTree = "<group>"; };
+		7DBB510A263044D400647F89 /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
+		7DBB510D263045E000647F89 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		7DBB510E263045E000647F89 /* SettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
+		7DBB5113263046AD00647F89 /* ToDoListCoordinator+Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToDoListCoordinator+Setting.swift"; sourceTree = "<group>"; };
 		7FE3C9EE7F77237C04C1BD61 /* Pods_CheckPlusPlus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CheckPlusPlus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -139,6 +149,7 @@
 		7DA8DEBE2615AAED00C9C277 /* CheckPlusPlus */ = {
 			isa = PBXGroup;
 			children = (
+				7DBB5105263024E000647F89 /* Setting */,
 				7DA8DF262617084700C9C277 /* ToDoList */,
 				7DA8DEFD2616CFDB00C9C277 /* Authentication */,
 				7DA8DEF22615C71000C9C277 /* Root */,
@@ -209,6 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				7DA8DF2B2617086E00C9C277 /* ToDoListCoordinator.swift */,
+				7DBB5113263046AD00647F89 /* ToDoListCoordinator+Setting.swift */,
 				7D691382261AF7FF0060AAAD /* ToDoListCoordinator+Auth.swift */,
 				7DA8DF272617086100C9C277 /* ToDoListViewModel.swift */,
 				7DA8DF2E2617087A00C9C277 /* ToDoListViewController.swift */,
@@ -239,6 +251,17 @@
 				7DBB50DA262F2D8A00647F89 /* PositiveFeedbackView.swift */,
 			);
 			path = HelperViews;
+			sourceTree = "<group>";
+		};
+		7DBB5105263024E000647F89 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				7DBB5106263044B000647F89 /* SettingCoordinator.swift */,
+				7DBB510A263044D400647F89 /* SettingViewModel.swift */,
+				7DBB510D263045E000647F89 /* SettingViewController.swift */,
+				7DBB510E263045E000647F89 /* SettingViewController.xib */,
+			);
+			path = Setting;
 			sourceTree = "<group>";
 		};
 		D432EB91EE758DBC2E2B314B /* Frameworks */ = {
@@ -319,6 +342,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7DA8DECC2615AAF400C9C277 /* LaunchScreen.storyboard in Resources */,
+				7DBB5110263045E000647F89 /* SettingViewController.xib in Resources */,
 				7DBB50E2262FAD4900647F89 /* clap-together.json in Resources */,
 				7DBB50EA263003C400647F89 /* check-box.json in Resources */,
 				7DBB50192628601C00647F89 /* ToDoTableViewCell.xib in Resources */,
@@ -404,16 +428,20 @@
 				7D69137A2619F8D30060AAAD /* KeychainManager.swift in Sources */,
 				7DA8DEE02615C10100C9C277 /* MetaTypeDictionary.swift in Sources */,
 				7DA8DEFF2616CFEB00C9C277 /* AuthCoordinator.swift in Sources */,
+				7DBB510F263045E000647F89 /* SettingViewController.swift in Sources */,
 				7DA8DEDC2615B58100C9C277 /* Coordinator.swift in Sources */,
 				7DA8DF282617086100C9C277 /* ToDoListViewModel.swift in Sources */,
+				7DBB510B263044D400647F89 /* SettingViewModel.swift in Sources */,
 				7D6913412619B77E0060AAAD /* AuthPickerViewController.swift in Sources */,
 				7DBB509F262C7DC400647F89 /* PacketManager.swift in Sources */,
 				7DA8DF2C2617086E00C9C277 /* ToDoListCoordinator.swift in Sources */,
+				7DBB5114263046AD00647F89 /* ToDoListCoordinator+Setting.swift in Sources */,
 				7DA8DEC02615AAED00C9C277 /* AppDelegate.swift in Sources */,
 				7DBB501426280A8800647F89 /* Packets.pb.swift in Sources */,
 				7DBB50CA262EEB6500647F89 /* EditToDoViewController.swift in Sources */,
 				7DBB50C3262DDC0300647F89 /* CreateToDoViewController.swift in Sources */,
 				7DBB50A2262C860300647F89 /* MessageHandler.swift in Sources */,
+				7DBB5107263044B000647F89 /* SettingCoordinator.swift in Sources */,
 				7DBB5032262871C400647F89 /* ServerSession.swift in Sources */,
 				7DBB50182628601C00647F89 /* ToDoTableViewCell.swift in Sources */,
 				7D69137D2619FFB60060AAAD /* Private.swift in Sources */,

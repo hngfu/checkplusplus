@@ -11,6 +11,7 @@ import SwiftProtobuf
 
 protocol ToDoListViewModelDelegate: AnyObject {
     func showAuth()
+    func showSetting()
 }
 
 final class ToDoListViewModel {
@@ -54,6 +55,10 @@ final class ToDoListViewModel {
         var message = C_DeleteToDo()
         message.id = id
         send(message: message, with: .cDeleteToDo)
+    }
+    
+    func setOptions() {
+        delegate?.showSetting()
     }
     
     //MARK: - Private

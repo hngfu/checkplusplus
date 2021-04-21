@@ -29,4 +29,11 @@ extension ToDoListCoordinator: ToDoListViewModelDelegate {
         authCoord.delegate = self
         authCoord.start()
     }
+    
+    func showSetting() {
+        let settingCoord = SettingCoordinator(navigationController: navigationController)
+        childCoordinators[SettingCoordinator] = settingCoord
+        settingCoord.delegate = self
+        settingCoord.start()
+    }
 }

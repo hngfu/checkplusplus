@@ -33,7 +33,7 @@ final class ToDoListViewController: UIViewController {
     }
     
     @IBAction func tapSettingButton(_ sender: UIBarButtonItem) {
-
+        viewModel?.setOptions()
     }
     
     //MARK: - Private
