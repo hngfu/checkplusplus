@@ -50,6 +50,7 @@
 		7DBB5114263046AD00647F89 /* ToDoListCoordinator+Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBB5113263046AD00647F89 /* ToDoListCoordinator+Setting.swift */; };
 		7DBB512326304F8800647F89 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBB512226304F8700647F89 /* SettingViewController.swift */; };
 		7DBB512626304F9400647F89 /* SettingViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DBB512526304F9400647F89 /* SettingViewController.storyboard */; };
+		7DBB515B263072F000647F89 /* LicensesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DBB515A263072F000647F89 /* LicensesViewController.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -100,6 +101,7 @@
 		7DBB5113263046AD00647F89 /* ToDoListCoordinator+Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToDoListCoordinator+Setting.swift"; sourceTree = "<group>"; };
 		7DBB512226304F8700647F89 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		7DBB512526304F9400647F89 /* SettingViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingViewController.storyboard; sourceTree = "<group>"; };
+		7DBB515A263072F000647F89 /* LicensesViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LicensesViewController.storyboard; sourceTree = "<group>"; };
 		7FE3C9EE7F77237C04C1BD61 /* Pods_CheckPlusPlus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CheckPlusPlus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -260,8 +262,17 @@
 				7DBB510A263044D400647F89 /* SettingViewModel.swift */,
 				7DBB512226304F8700647F89 /* SettingViewController.swift */,
 				7DBB512526304F9400647F89 /* SettingViewController.storyboard */,
+				7DBB515D263073D000647F89 /* HelperViews */,
 			);
 			path = Setting;
+			sourceTree = "<group>";
+		};
+		7DBB515D263073D000647F89 /* HelperViews */ = {
+			isa = PBXGroup;
+			children = (
+				7DBB515A263072F000647F89 /* LicensesViewController.storyboard */,
+			);
+			path = HelperViews;
 			sourceTree = "<group>";
 		};
 		D432EB91EE758DBC2E2B314B /* Frameworks */ = {
@@ -348,6 +359,7 @@
 				7DBB50E3262FAD4900647F89 /* thumbs-up.json in Resources */,
 				7D691319261975B40060AAAD /* GoogleService-Info.plist in Resources */,
 				7DBB50E1262FAD4900647F89 /* wow.json in Resources */,
+				7DBB515B263072F000647F89 /* LicensesViewController.storyboard in Resources */,
 				7D6913422619B77E0060AAAD /* AuthPickerViewController.xib in Resources */,
 				7DA8DEC92615AAF400C9C277 /* Assets.xcassets in Resources */,
 				7DBB50E4262FAD4900647F89 /* check.json in Resources */,
