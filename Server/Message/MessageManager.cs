@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 using Google.Protobuf;
-using Server.Message;
 
-namespace Server.Packet
+namespace Server.Message
 {
     class MessageManager
     {
