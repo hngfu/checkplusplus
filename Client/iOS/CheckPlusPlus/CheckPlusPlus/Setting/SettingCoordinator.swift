@@ -19,6 +19,7 @@ final class SettingCoordinator: Coordinator {
         let sb = UIStoryboard(name: "\(SettingViewController.self)", bundle: nil)
         guard let nc = sb.instantiateInitialViewController() as? UINavigationController,
               let vc = nc.topViewController as? SettingViewController else { return }
+        viewModel.delegate = self
         vc.viewModel = viewModel
         nc.modalPresentationStyle = .fullScreen
         navigationController.present(nc, animated: true)
@@ -31,6 +32,7 @@ final class SettingCoordinator: Coordinator {
 extension SettingCoordinator: SettingViewModelDelegate {
     
     func settingViewModelDidSetOptions() {
+        navigationController.dismiss(animated: true)
         delegate?.settingCoordinatorDidFinish()
     }
 }

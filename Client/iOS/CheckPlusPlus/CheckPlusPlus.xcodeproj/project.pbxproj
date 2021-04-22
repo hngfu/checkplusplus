@@ -178,7 +178,7 @@
 				7D69137C2619FFB60060AAAD /* Private.swift */,
 				7DBB5031262871C400647F89 /* ServerSession.swift */,
 				7DBB509E262C7DC400647F89 /* PacketManager.swift */,
-				7DBB50E6262FD55C00647F89 /* UsesAutoLayout.swift */,
+				7DBB515F26311F6F00647F89 /* PropertyWrappers */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -273,6 +273,14 @@
 				7DBB515A263072F000647F89 /* LicensesViewController.storyboard */,
 			);
 			path = HelperViews;
+			sourceTree = "<group>";
+		};
+		7DBB515F26311F6F00647F89 /* PropertyWrappers */ = {
+			isa = PBXGroup;
+			children = (
+				7DBB50E6262FD55C00647F89 /* UsesAutoLayout.swift */,
+			);
+			path = PropertyWrappers;
 			sourceTree = "<group>";
 		};
 		D432EB91EE758DBC2E2B314B /* Frameworks */ = {

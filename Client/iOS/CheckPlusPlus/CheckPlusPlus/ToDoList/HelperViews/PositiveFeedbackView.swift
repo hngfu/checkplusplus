@@ -11,6 +11,7 @@ import Lottie
 final class PositiveFeedbackView: UIView {
     
     func play() {
+        guard Setting.shared.setting(with: .shouldShowCheeringCard) else { return }
         guard let feedback = feedbacks.randomElement() else { return }
         commentLabel.text = feedback.comment
         animationView.animation = Animation.named(feedback.animation)

@@ -37,6 +37,9 @@
                                                         </label>
                                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y8G-6P-AkX">
                                                             <rect key="frame" x="333" y="2.5" width="51" height="31"/>
+                                                            <connections>
+                                                                <action selector="toggleCheckAgainSwitch:" destination="OMg-cy-fwD" eventType="valueChanged" id="nCc-dH-RoA"/>
+                                                            </connections>
                                                         </switch>
                                                     </subviews>
                                                     <constraints>
@@ -74,6 +77,9 @@
                                                         </label>
                                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="amS-8e-mJy">
                                                             <rect key="frame" x="333" y="4.5" width="51" height="31"/>
+                                                            <connections>
+                                                                <action selector="toggleShowCheeringCardSwitch:" destination="OMg-cy-fwD" eventType="valueChanged" id="KPj-nK-GSN"/>
+                                                            </connections>
                                                         </switch>
                                                     </subviews>
                                                     <constraints>
@@ -132,8 +138,15 @@
                     <navigationItem key="navigationItem" title="Setting" id="3z0-R5-obX">
                         <barButtonItem key="leftBarButtonItem" title="닫기" id="g3I-Vj-vyO">
                             <color key="tintColor" systemColor="systemIndigoColor"/>
+                            <connections>
+                                <action selector="tapCloseButton:" destination="OMg-cy-fwD" id="inF-3d-45I"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="checkAgainSwitch" destination="Y8G-6P-AkX" id="Kpo-eb-cJa"/>
+                        <outlet property="showCheeringCardSwitch" destination="amS-8e-mJy" id="9qG-Qa-4T8"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dUr-Wg-6zk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

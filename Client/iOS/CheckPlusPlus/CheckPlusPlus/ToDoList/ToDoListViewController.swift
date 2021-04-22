@@ -45,10 +45,11 @@ final class ToDoListViewController: UIViewController {
         //ToDoListTableView
         viewModel.todos.bind(to: toDoListTableView.rx.items(cellIdentifier: ToDoTableViewCell.identifier,
                                                             cellType: ToDoTableViewCell.self)) { _, todo, cell in
-            cell.toDoContentLabel.text = todo.content
-            cell.tapGestureRecognizer.rx.event
-                .bind { _ in 
-                    cell.checkBoxAnimationView.play(fromFrame: 30, toFrame: 50, loopMode: .playOnce)
+            let selectCellAction: () -> Void = {
+                cell.checkBoxAnimationView.play(fromFrame: 30, toFrame: 50, loopMode: .playOnce)
+                
+                // 완료 다시 확인 설정이 true로 되어있으면 Alert 표시, false면 그냥 완료(삭제)처리
+                if Setting.shared.setting(with: .shouldCheckAgainToDoCompletion) {
                     let alert = self.makeAlertController {
                         self.positiveFeedbackView.play()
                         self.viewModel?.deleteToDo(with: todo.id)
@@ -56,7 +57,15 @@ final class ToDoListViewController: UIViewController {
                         cell.checkBoxAnimationView.play(fromFrame: 90, toFrame: 110, loopMode: .playOnce)
                     }
                     self.present(alert, animated: true)
+                } else {
+                    self.positiveFeedbackView.play()
+                    self.viewModel?.deleteToDo(with: todo.id)
                 }
+            }
+            
+            cell.toDoContentLabel.text = todo.content
+            cell.tapGestureRecognizer.rx.event
+                .bind { _ in selectCellAction() }
                 .disposed(by: cell.disposeBag)
         }
         .disposed(by: disposeBag)
