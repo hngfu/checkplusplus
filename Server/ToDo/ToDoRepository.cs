@@ -29,16 +29,16 @@ namespace Server
             return false;
         }
 
-        public bool InsertToDo(int toDoListID, string content)
+        public int AddToDo(int toDoListID, string content)
         {
             string command = $@"
             INSERT INTO ToDos(ToDoLists_id, content)
-            VALUES ({toDoListID}, '{content}');           
+            VALUES ({toDoListID}, '{content}');  
+            SELECT LAST_INSERT_ID() as id;
             ";
-            int affectedRowsNumber = 1;
-            if (ExecuteCommand(command) == affectedRowsNumber)
-                return true;
-            return false;
+            DataSet dataSet = ExecuteQuery(command);
+            UInt64 id = (UInt64)dataSet.Tables[0].Rows[0]["id"];
+            return Convert.ToInt32(id);
         }
 
         public bool UpdateToDo(int id, string content)
@@ -67,16 +67,13 @@ namespace Server
             return false;
         }
 
-        public List<ToDo> GetToDos(int userID)
+        public List<ToDo> GetToDos(int toDoListID)
         {
             List<ToDo> todos = new List<ToDo>();
             string query = $@"
             SELECT id, content
             FROM ToDos
-            WHERE ToDoLists_id = (SELECT ToDoLists_id
-            FROM Users_ToDoLists
-            WHERE Users_id = {userID} 
-            LIMIT 1); 
+            WHERE ToDoLists_id = {toDoListID}
             ";
             DataSet dataSet = ExecuteQuery(query);
             foreach (DataRow row in dataSet.Tables[0].Rows)
@@ -88,6 +85,20 @@ namespace Server
                 });
             }
             return todos;
+        }
+
+        public int GetToDoListID(string uid)
+        {
+            string query = $@"
+                SELECT ToDoLists_id
+                FROM Users_ToDoLists
+                WHERE Users_id = (SELECT id
+                FROM Users
+                WHERE ukey = '{uid}'
+                LIMIT 1);
+            ";
+            DataSet dataSet = ExecuteQuery(query);
+            return (int)dataSet.Tables[0].Rows[0]["ToDoLists_id"];
         }
 
         public bool Exists(string uid)
