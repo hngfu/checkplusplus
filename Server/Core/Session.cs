@@ -11,7 +11,7 @@ namespace Server
         Socket _socket;
         RecvBuffer _recvBuffer = new RecvBuffer(65535);
 
-        public abstract void OnRecv(byte[] data);
+        public abstract void OnRecv(ArraySegment<byte> data);
 
         public void Start(Socket socket)
         {
@@ -63,8 +63,9 @@ namespace Server
         {
             if (e.SocketError == SocketError.Success && e.BytesTransferred > 0)
             {
-                OnRecv(_recvBuffer.ReadSegment.Array);
-
+                _recvBuffer.OnWrite(e.BytesTransferred);
+                OnRecv(_recvBuffer.ReadSegment);
+                _recvBuffer.OnRead(e.BytesTransferred);
                 RegisterRecv();
             }
             else

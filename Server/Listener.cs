@@ -29,6 +29,8 @@ namespace Server
 
         void RegisterAccept(SocketAsyncEventArgs args)
         {
+            args.AcceptSocket = null;
+
             bool isPending = _socket.AcceptAsync(args);
             if (isPending == false)
                 OnAcceptCompleted(null, args);
