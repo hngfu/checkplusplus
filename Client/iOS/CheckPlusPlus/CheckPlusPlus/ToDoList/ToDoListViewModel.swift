@@ -22,17 +22,15 @@ final class ToDoListViewModel {
         self.delegate = delegate
         session.delegate = self
         messageHandler.delegate = self
-        
-        if let uid = keychainManager.getUID() {
-            start(with: uid)
-        } else {
-            delegate.showAuth()
-        }
     }
     
-    func start(with uid: String) {
+    func start() {
+        guard let uid = keychainManager.getUID() else {
+            self.delegate?.showAuth()
+            return
+        }
+
         session.connect()
-        
         var message = C_GetToDos()
         message.uid = uid
         send(message: message, with: .cGetToDoList)

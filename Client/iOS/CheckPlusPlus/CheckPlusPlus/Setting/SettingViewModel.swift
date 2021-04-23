@@ -19,9 +19,16 @@ final class SettingViewModel {
         Setting.shared.change(settingValue: settingValue, with: key)
     }
     
+    func logout() {
+        keychainManager.deleteUID()
+    }
+    
     func finish() {
         delegate?.settingViewModelDidSetOptions()
     }
+    
+    //MARK: - Private
+    private let keychainManager = KeychainManager()
 }
 
 final class Setting {

@@ -11,5 +11,7 @@ extension ToDoListCoordinator: SettingCoordinatorDelegate {
     
     func settingCoordinatorDidFinish() {
         childCoordinators[SettingCoordinator] = nil
+        
+        viewModel?.start()
     }
 }

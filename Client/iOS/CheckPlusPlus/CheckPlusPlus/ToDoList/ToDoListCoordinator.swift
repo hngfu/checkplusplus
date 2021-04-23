@@ -13,6 +13,7 @@ final class ToDoListCoordinator: Coordinator {
     
     func start() {
         viewModel = ToDoListViewModel(delegate: self)
+        viewModel?.start()
         
         let sb = UIStoryboard(name: "\(ToDoListViewController.self)", bundle: nil)
         guard let vc = sb.instantiateInitialViewController() as? ToDoListViewController else { return }

@@ -13,6 +13,6 @@ extension ToDoListCoordinator: AuthCoordinatorDelegate {
         childCoordinators[AuthCoordinator] = nil
         
         viewModel?.save(uid: uid)
-        viewModel?.start(with: uid)
+        viewModel?.start()
     }
 }

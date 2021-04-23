@@ -28,7 +28,7 @@ final class AuthCoordinator: Coordinator {
         ]
         let authViewController = authUI.authViewController()
         authViewController.modalPresentationStyle = .fullScreen
-        navigationController.present(authViewController, animated: false)
+        navigationController.present(authViewController, animated: true)
     }
     
     //MARK: - Private

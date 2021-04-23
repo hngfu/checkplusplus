@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <sections>
-                            <tableViewSection headerTitle="설정" footerTitle="설정하신 내용은 계정과 연동되지 않습니다." id="VYj-qq-D5T">
+                            <tableViewSection headerTitle="설정" footerTitle="설정 정보는 계정과 연동되지 않습니다." id="VYj-qq-D5T">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="52" id="efx-96-uFU">
                                         <rect key="frame" x="0.0" y="55.5" width="414" height="52"/>
@@ -129,6 +129,30 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection headerTitle="계정" id="gTB-aH-pGN">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="60" id="LfL-zS-P62">
+                                        <rect key="frame" x="0.0" y="347.5" width="414" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LfL-zS-P62" id="lDU-RY-CoV">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fEi-U1-kBW">
+                                                    <rect key="frame" x="16" y="8" width="63" height="44"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <state key="normal" title="로그아웃"/>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="fEi-U1-kBW" secondAttribute="bottom" constant="8" id="1Tt-Ia-9C8"/>
+                                                <constraint firstItem="fEi-U1-kBW" firstAttribute="top" secondItem="lDU-RY-CoV" secondAttribute="top" constant="8" id="Amg-o3-Opu"/>
+                                                <constraint firstItem="fEi-U1-kBW" firstAttribute="leading" secondItem="lDU-RY-CoV" secondAttribute="leading" constant="16" id="wZn-6F-gF9"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="OMg-cy-fwD" id="MuK-o7-EhZ"/>
@@ -145,6 +169,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="checkAgainSwitch" destination="Y8G-6P-AkX" id="Kpo-eb-cJa"/>
+                        <outlet property="logoutButton" destination="fEi-U1-kBW" id="uE7-PP-vMH"/>
                         <outlet property="showCheeringCardSwitch" destination="amS-8e-mJy" id="9qG-Qa-4T8"/>
                     </connections>
                 </tableViewController>
