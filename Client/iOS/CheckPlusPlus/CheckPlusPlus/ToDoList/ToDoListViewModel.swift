@@ -26,6 +26,8 @@ final class ToDoListViewModel {
     
         NotificationCenter.default.addObserver(self, selector: #selector(didChangeReachability),
                                                name: .reachabilityChanged, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(refresh),
+                                               name: .sceneDidBecomeActive, object: nil)
     }
     
     func start() {
@@ -92,6 +94,10 @@ final class ToDoListViewModel {
     @objc private func didChangeReachability() {
         guard networkStatus.isConnected == false else { return }
         delegate?.showReachability()
+    }
+    
+    @objc private func refresh() {
+        start()
     }
     
     deinit {

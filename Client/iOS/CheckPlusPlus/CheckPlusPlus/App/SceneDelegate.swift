@@ -24,7 +24,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         rootCoordinator?.start()
     }
     
+    func sceneDidBecomeActive(_ scene: UIScene) {
+        NotificationCenter.default.post(name: .sceneDidBecomeActive, object: nil)
+    }
+    
     //MARK: - Private
     private var rootCoordinator: RootCoordinator?
 }
 
+extension Notification.Name {
+    static let sceneDidBecomeActive = Notification.Name(rawValue: "sceneDidBecomeActive")
+}

@@ -20,6 +20,9 @@ final class ServerSession: NSObject {
 
     func connect() {
         do {
+            if socket.isConnected {
+                disconnect()
+            }
             try socket.connect(toHost: Private.Network.host,
                                onPort: Private.Network.port)
             registerReceive()
