@@ -58,6 +58,7 @@
 		7DBB51B52632B56600647F89 /* ReachabilityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBB51B42632B56600647F89 /* ReachabilityViewModel.swift */; };
 		7DBB51B82632B6B800647F89 /* ToDoListCoordiantor+Reachable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBB51B72632B6B800647F89 /* ToDoListCoordiantor+Reachable.swift */; };
 		7DBB51C12632B9A200647F89 /* NetworkStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBB51C02632B9A200647F89 /* NetworkStatus.swift */; };
+		7DBB51CA2632DA3700647F89 /* looking-for-wifi.json in Resources */ = {isa = PBXBuildFile; fileRef = 7DBB51C92632DA3700647F89 /* looking-for-wifi.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -118,6 +119,7 @@
 		7DBB51B42632B56600647F89 /* ReachabilityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityViewModel.swift; sourceTree = "<group>"; };
 		7DBB51B72632B6B800647F89 /* ToDoListCoordiantor+Reachable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToDoListCoordiantor+Reachable.swift"; sourceTree = "<group>"; };
 		7DBB51C02632B9A200647F89 /* NetworkStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkStatus.swift; sourceTree = "<group>"; };
+		7DBB51C92632DA3700647F89 /* looking-for-wifi.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "looking-for-wifi.json"; sourceTree = "<group>"; };
 		7FE3C9EE7F77237C04C1BD61 /* Pods_CheckPlusPlus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CheckPlusPlus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -136,6 +138,7 @@
 		7D69135D2619E1B50060AAAD /* LottieAssets */ = {
 			isa = PBXGroup;
 			children = (
+				7DBB51C92632DA3700647F89 /* looking-for-wifi.json */,
 				7D69135E2619E1BF0060AAAD /* meerkat-looking-around.json */,
 				7DBB50E0262FAD4900647F89 /* check.json */,
 				7DBB50DE262FAD4800647F89 /* clap-together.json */,
@@ -404,6 +407,7 @@
 			files = (
 				7DA8DECC2615AAF400C9C277 /* LaunchScreen.storyboard in Resources */,
 				7DBB50E2262FAD4900647F89 /* clap-together.json in Resources */,
+				7DBB51CA2632DA3700647F89 /* looking-for-wifi.json in Resources */,
 				7DBB50EA263003C400647F89 /* check-box.json in Resources */,
 				7DBB50192628601C00647F89 /* ToDoTableViewCell.xib in Resources */,
 				7DBB50E3262FAD4900647F89 /* thumbs-up.json in Resources */,

@@ -16,10 +16,8 @@ final class ReachabilityCoordinator: Coordinator {
     weak var delegate: ReachabilityCoordinatorDelegate?
     
     func start() {
-        let viewModel = ReachabilityViewModel()
         viewModel.delegate = self
         let vc = ReachabilityViewController(nibName: "\(ReachabilityViewController.self)", bundle: nil)
-        vc.viewModel = viewModel
         vc.modalPresentationStyle = .fullScreen
         if navigationController.presentedViewController != nil {
             navigationController.dismiss(animated: true, completion: nil)

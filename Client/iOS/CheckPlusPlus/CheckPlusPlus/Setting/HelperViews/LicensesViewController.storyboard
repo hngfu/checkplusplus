@@ -541,12 +541,56 @@ Commons License 4.0</string>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="115" id="CLy-JS-hWW">
+                                        <rect key="frame" x="0.0" y="1415" width="414" height="115"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CLy-JS-hWW" id="8Xn-z2-qTg">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="115"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IRq-0s-c5D">
+                                                    <rect key="frame" x="16" y="8" width="382" height="99"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Looking for Wifi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IT2-zH-aM1">
+                                                            <rect key="frame" x="0.0" y="0.0" width="137" height="24"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6hn-cn-nvx">
+                                                            <rect key="frame" x="16" y="32" width="350" height="59"/>
+                                                            <string key="text">https://lottiefiles.com/10050-looking-for-wifi
+Created by Todd Rocheford
+Commons License 4.0</string>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                            <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="IT2-zH-aM1" firstAttribute="leading" secondItem="IRq-0s-c5D" secondAttribute="leading" id="2YV-yZ-72i"/>
+                                                        <constraint firstAttribute="trailing" secondItem="6hn-cn-nvx" secondAttribute="trailing" constant="16" id="E1A-qD-7lR"/>
+                                                        <constraint firstItem="IT2-zH-aM1" firstAttribute="top" secondItem="IRq-0s-c5D" secondAttribute="top" id="awc-FY-YY6"/>
+                                                        <constraint firstItem="6hn-cn-nvx" firstAttribute="leading" secondItem="IRq-0s-c5D" secondAttribute="leading" constant="16" id="fAV-vZ-zYy"/>
+                                                        <constraint firstAttribute="bottom" secondItem="6hn-cn-nvx" secondAttribute="bottom" constant="8" id="iNR-xG-w2M"/>
+                                                        <constraint firstItem="6hn-cn-nvx" firstAttribute="top" secondItem="IT2-zH-aM1" secondAttribute="bottom" constant="8" id="xXo-Tx-D2G"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="IRq-0s-c5D" firstAttribute="leading" secondItem="8Xn-z2-qTg" secondAttribute="leading" constant="16" id="FyK-B3-dIo"/>
+                                                <constraint firstItem="IRq-0s-c5D" firstAttribute="top" secondItem="8Xn-z2-qTg" secondAttribute="top" constant="8" id="QH9-p0-9gS"/>
+                                                <constraint firstAttribute="trailing" secondItem="IRq-0s-c5D" secondAttribute="trailing" constant="16" id="qfx-tr-Lvf"/>
+                                                <constraint firstAttribute="bottom" secondItem="IRq-0s-c5D" secondAttribute="bottom" constant="8" id="yoF-0P-iCu"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="Licenses" id="uVG-zj-dyL">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="591" id="6dQ-fi-F0N">
-                                        <rect key="frame" x="0.0" y="1471" width="414" height="591"/>
+                                        <rect key="frame" x="0.0" y="1586" width="414" height="591"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6dQ-fi-F0N" id="9Fs-Je-xzT">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="591"/>
@@ -594,7 +638,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="429" id="wRa-DH-tGy">
-                                        <rect key="frame" x="0.0" y="2062" width="414" height="429"/>
+                                        <rect key="frame" x="0.0" y="2177" width="414" height="429"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wRa-DH-tGy" id="SRG-wv-nMO">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="429"/>
@@ -648,7 +692,7 @@ limitations under the License.</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="691" id="FLF-Ia-N2V">
-                                        <rect key="frame" x="0.0" y="2491" width="414" height="691"/>
+                                        <rect key="frame" x="0.0" y="2606" width="414" height="691"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FLF-Ia-N2V" id="3Ag-aU-H6X">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="691"/>
@@ -697,7 +741,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="110" id="710-cf-LOX">
-                                        <rect key="frame" x="0.0" y="3182" width="414" height="110"/>
+                                        <rect key="frame" x="0.0" y="3297" width="414" height="110"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="710-cf-LOX" id="4Dv-eC-DAe">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="110"/>
