@@ -12,6 +12,7 @@ import SwiftProtobuf
 protocol ToDoListViewModelDelegate: AnyObject {
     func showAuth()
     func showSetting()
+    func showReachability()
 }
 
 final class ToDoListViewModel {
@@ -22,9 +23,16 @@ final class ToDoListViewModel {
         self.delegate = delegate
         session.delegate = self
         messageHandler.delegate = self
+    
+        NotificationCenter.default.addObserver(self, selector: #selector(didChangeReachability),
+                                               name: .reachabilityChanged, object: nil)
     }
     
     func start() {
+        guard networkStatus.isConnected else {
+            self.delegate?.showReachability()
+            return
+        }
         guard let uid = keychainManager.getUID() else {
             self.delegate?.showAuth()
             return
@@ -63,11 +71,12 @@ final class ToDoListViewModel {
         keychainManager.set(uid: uid)
     }
     
-    //MARK: - Private
+    //MARK: - Private & deinit
     private let keychainManager = KeychainManager()
     private let session = ServerSession()
     private let packetManager = PacketManager()
     private let messageHandler = MessageHandler()
+    private let networkStatus = NetworkStatus.default
 
     private(set) var todos = BehaviorRelay<[ToDo]>(value: [])
     private let handleQueue = DispatchQueue(label: "handleQueue")
@@ -78,6 +87,15 @@ final class ToDoListViewModel {
             let packet = packetManager.makePacketWith(id: messageID, data: data)
             session.send(data: packet)
         }
+    }
+    
+    @objc private func didChangeReachability() {
+        guard networkStatus.isConnected == false else { return }
+        delegate?.showReachability()
+    }
+    
+    deinit {
+        session.disconnect()
     }
 }
 

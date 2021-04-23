@@ -37,4 +37,11 @@ extension ToDoListCoordinator: ToDoListViewModelDelegate {
         settingCoord.delegate = self
         settingCoord.start()
     }
+    
+    func showReachability() {
+        let reachableCoord = ReachabilityCoordinator(navigationController: navigationController)
+        childCoordinators[ReachabilityCoordinator] = reachableCoord
+        reachableCoord.delegate = self
+        reachableCoord.start()
+    }
 }
