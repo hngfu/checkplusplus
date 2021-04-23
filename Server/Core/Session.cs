@@ -12,6 +12,7 @@ namespace Server
         RecvBuffer _recvBuffer = new RecvBuffer(65535);
 
         public abstract void OnRecv(ArraySegment<byte> data);
+        public abstract void OnDisconnect();
 
         public void Start(Socket socket)
         {
@@ -79,6 +80,7 @@ namespace Server
 
             try
             {
+                OnDisconnect();
                 _socket.Shutdown(SocketShutdown.Both);
                 _socket.Close();
             }

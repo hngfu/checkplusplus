@@ -15,5 +15,11 @@ namespace Server
         {
             MessageManager.Instance.OnRecvPacket(this, data);
         }
+
+        public override void OnDisconnect()
+        {
+            ToDoList.Leave(this);
+            SessionManager.Instance.Remove(this);
+        }
     }
 }
