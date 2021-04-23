@@ -21,6 +21,7 @@ final class ToDoTableViewCell: UITableViewCell {
     
     override func prepareForReuse() {
         disposeBag = DisposeBag()
+        checkBoxAnimationView.stop()
     }
 
     override func awakeFromNib() {

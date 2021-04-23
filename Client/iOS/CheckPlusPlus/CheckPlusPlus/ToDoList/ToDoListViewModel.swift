@@ -31,8 +31,8 @@ final class ToDoListViewModel {
     }
     
     func start(with uid: String) {
-        keychainManager.set(uid: uid)
-
+        session.connect()
+        
         var message = C_GetToDos()
         message.uid = uid
         send(message: message, with: .cGetToDoList)
@@ -59,6 +59,10 @@ final class ToDoListViewModel {
     
     func setOptions() {
         delegate?.showSetting()
+    }
+    
+    func save(uid: String) {
+        keychainManager.set(uid: uid)
     }
     
     //MARK: - Private

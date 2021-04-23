@@ -12,6 +12,7 @@ extension ToDoListCoordinator: AuthCoordinatorDelegate {
     func didSignIn(uid: String) {
         childCoordinators[AuthCoordinator] = nil
         
+        viewModel?.save(uid: uid)
         viewModel?.start(with: uid)
     }
 }

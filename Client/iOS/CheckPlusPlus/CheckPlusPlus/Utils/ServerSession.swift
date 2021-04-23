@@ -15,34 +15,32 @@ protocol ServerSessionDelegate: AnyObject {
 
 final class ServerSession: NSObject {
     
-    private var socket: GCDAsyncSocket?
+    private lazy var socket = GCDAsyncSocket(delegate: self, delegateQueue: .global())
     weak var delegate: ServerSessionDelegate?
-    
-    override init() {
-        super.init()
-        let socket = GCDAsyncSocket(delegate: self, delegateQueue: .global())
+
+    func connect() {
         do {
             try socket.connect(toHost: Private.Network.host,
                                onPort: Private.Network.port)
+            registerReceive()
         } catch let error {
             os_log("Connect failed: %@", error.localizedDescription)
         }
-        self.socket = socket
-    }
-    
-    func registerReceive() {
-        socket?.readData(withTimeout: 100, tag: 0)
     }
     
     func send(data: Data) {
-        socket?.write(data, withTimeout: 100, tag: 0)
+        socket.write(data, withTimeout: 100, tag: 0)
     }
     
     func disconnect() {
-        socket?.disconnect()
+        socket.disconnect()
+    }
+    
+    //MARK: - Private
+    private func registerReceive() {
+        socket.readData(withTimeout: -1, tag: 0)
     }
 }
-
 
 extension ServerSession: GCDAsyncSocketDelegate {
     
