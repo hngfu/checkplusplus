@@ -19,7 +19,8 @@ final class ReachabilityCoordinator: Coordinator {
         viewModel.delegate = self
         let vc = ReachabilityViewController(nibName: "\(ReachabilityViewController.self)", bundle: nil)
         vc.modalPresentationStyle = .fullScreen
-        if navigationController.presentedViewController != nil {
+        if let presentedVC = navigationController.presentedViewController,
+           (presentedVC is ReachabilityViewController) == false {
             navigationController.dismiss(animated: true, completion: nil)
         }
         navigationController.present(vc, animated: true, completion: nil)
